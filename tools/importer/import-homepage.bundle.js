@@ -197,17 +197,27 @@ var CustomImportScript = (() => {
       const body = card.querySelector(".article-card-body") || card;
       const meta = body.querySelector(".article-card-meta");
       const title = body.querySelector('h3, h2, h4, [class*="heading"]');
-      const link = document.createElement("a");
-      if (card.getAttribute("href")) link.setAttribute("href", card.getAttribute("href"));
+      const href = card.getAttribute("href");
       const textContent = [];
       if (meta) textContent.push(meta);
-      if (title) textContent.push(title);
+      if (title) {
+        if (href) {
+          const link = document.createElement("a");
+          link.setAttribute("href", href);
+          link.append(...title.childNodes);
+          title.append(link);
+        }
+        textContent.push(title);
+      }
       if (textContent.length) {
-        link.append(...textContent);
+        cells.push([img || "", textContent]);
+      } else if (href) {
+        const link = document.createElement("a");
+        link.setAttribute("href", href);
+        link.textContent = card.textContent.trim() || href;
         cells.push([img || "", link]);
       } else {
-        if (card.getAttribute("href")) link.textContent = card.textContent.trim();
-        cells.push([img || "", card.getAttribute("href") ? link : card.textContent.trim() || ""]);
+        cells.push([img || "", card.textContent.trim() || ""]);
       }
     });
     if (!cells.length) {
