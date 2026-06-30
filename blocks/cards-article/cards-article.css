@@ -16,6 +16,15 @@
   margin: 16px;
 }
 
+.cards-article .cards-article-card-body a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cards-article .cards-article-card-body a:hover {
+  text-decoration: underline;
+}
+
 .cards-article .cards-article-card-image {
   line-height: 0;
 }

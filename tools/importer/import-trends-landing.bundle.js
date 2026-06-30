@@ -35,10 +35,10 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-homepage.js
-  var import_homepage_exports = {};
-  __export(import_homepage_exports, {
-    default: () => import_homepage_default
+  // tools/importer/import-trends-landing.js
+  var import_trends_landing_exports = {};
+  __export(import_trends_landing_exports, {
+    default: () => import_trends_landing_default
   });
 
   // tools/importer/parsers/hero-feature.js
@@ -75,119 +75,32 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-article.js
+  // tools/importer/parsers/cards-feature.js
   function parse2(element, { document }) {
-    const columnWrappers = element.querySelectorAll(":scope > div");
-    const image = element.querySelector("img");
-    const textWrapper = columnWrappers[1] || element;
-    const breadcrumbs = textWrapper.querySelector(".breadcrumbs");
-    const heading = textWrapper.querySelector('h1, h2, h3, .h2-heading, [class*="heading"]');
-    const metaRows = Array.from(textWrapper.querySelectorAll(".flex-horizontal")).filter((row) => !breadcrumbs || !breadcrumbs.contains(row));
-    if (!image && !heading) {
-      element.replaceWith(...element.childNodes);
-      return;
-    }
-    const textCell = [];
-    if (breadcrumbs) textCell.push(breadcrumbs);
-    if (heading) textCell.push(heading);
-    textCell.push(...metaRows);
-    const cells = [
-      [image || "", textCell]
-    ];
-    const block = WebImporter.Blocks.createBlock(document, { name: "columns-article", cells });
-    element.replaceWith(block);
-  }
-
-  // tools/importer/parsers/cards-gallery.js
-  function parse3(element, { document }) {
-    let items = Array.from(element.querySelectorAll(":scope > div.utility-aspect-1x1"));
-    if (!items.length) {
-      items = Array.from(element.querySelectorAll(':scope > div[class*="aspect"]'));
-    }
-    if (!items.length) {
-      items = Array.from(element.querySelectorAll(":scope > div")).filter((div) => div.querySelector("img, picture"));
-    }
+    let cards = Array.from(element.querySelectorAll(":scope > div")).filter(
+      (div) => div.querySelector("img, picture, h1, h2, h3, h4, p")
+    );
     const cells = [];
-    items.forEach((item) => {
-      const img = item.querySelector("img");
-      const picture = item.querySelector("picture");
-      const media = picture || img;
-      if (media) {
-        cells.push([media]);
-      }
+    cards.forEach((card) => {
+      const img = card.querySelector("picture, img.cover-image, img");
+      const title = card.querySelector('h1, h2, h3, h4, h5, h6, [class*="heading"]');
+      const description = card.querySelector("p");
+      const textContent = [];
+      if (title) textContent.push(title);
+      if (description) textContent.push(description);
+      if (!img && !textContent.length) return;
+      cells.push([img || "", textContent.length ? textContent : ""]);
     });
     if (!cells.length) {
       element.replaceWith(...element.childNodes);
       return;
     }
-    const block = WebImporter.Blocks.createBlock(document, { name: "cards-gallery", cells });
-    element.replaceWith(block);
-  }
-
-  // tools/importer/parsers/tabs-testimonial.js
-  function parse4(element, { document }) {
-    const panes = Array.from(
-      element.querySelectorAll(".tabs-content .tab-pane, .tab-pane")
-    );
-    const menuButtons = Array.from(
-      element.querySelectorAll(".tab-menu .tab-menu-link, .tab-menu button, button.tab-menu-link")
-    );
-    if (panes.length === 0) {
-      element.replaceWith(...element.childNodes);
-      return;
-    }
-    const cells = [];
-    panes.forEach((pane, i) => {
-      let label = "";
-      const button = menuButtons.find(
-        (b) => b.getAttribute("data-tab-target") === String(i)
-      ) || menuButtons[i];
-      if (button) {
-        const nameEl = button.querySelector("strong") || button.querySelector(".paragraph-sm strong, .paragraph-sm");
-        label = (nameEl ? nameEl.textContent : button.textContent).trim();
-      }
-      if (!label) {
-        const paneName = pane.querySelector('strong, [class*="paragraph"] strong');
-        label = paneName ? paneName.textContent.trim() : `Tab ${i + 1}`;
-      }
-      const contentCell = [];
-      const image = pane.querySelector("img");
-      if (image) contentCell.push(image);
-      const nameSource = pane.querySelector(".paragraph-xl strong, strong");
-      if (nameSource) {
-        const nameP = document.createElement("p");
-        const strong = document.createElement("strong");
-        strong.textContent = nameSource.textContent.trim();
-        nameP.append(strong);
-        contentCell.push(nameP);
-      }
-      let roleText = "";
-      if (nameSource) {
-        const nameWrapper = nameSource.closest("div");
-        let roleEl = nameWrapper && nameWrapper.nextElementSibling;
-        if (roleEl && roleEl.querySelector("strong")) roleEl = null;
-        if (roleEl && roleEl.tagName === "DIV") {
-          roleText = roleEl.textContent.trim();
-        }
-      }
-      if (roleText) {
-        const roleP = document.createElement("p");
-        roleP.textContent = roleText;
-        contentCell.push(roleP);
-      }
-      const quote = pane.querySelector("p.paragraph-xl, p");
-      if (quote) contentCell.push(quote);
-      cells.push([label, contentCell]);
-    });
-    const block = WebImporter.Blocks.createBlock(document, {
-      name: "tabs-testimonial",
-      cells
-    });
+    const block = WebImporter.Blocks.createBlock(document, { name: "cards-feature", cells });
     element.replaceWith(block);
   }
 
   // tools/importer/parsers/cards-article.js
-  function parse5(element, { document }) {
+  function parse3(element, { document }) {
     const cards = Array.from(
       element.querySelectorAll(':scope > a.article-card, :scope > a.card-link, :scope > a[class*="article-card"]')
     );
@@ -228,55 +141,29 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/accordion-faq.js
-  function parse6(element, { document }) {
-    const items = element.querySelectorAll("details.faq-item, details");
+  // tools/importer/parsers/cards-gallery.js
+  function parse4(element, { document }) {
+    let items = Array.from(element.querySelectorAll(":scope > div.utility-aspect-1x1"));
+    if (!items.length) {
+      items = Array.from(element.querySelectorAll(':scope > div[class*="aspect"]'));
+    }
+    if (!items.length) {
+      items = Array.from(element.querySelectorAll(":scope > div")).filter((div) => div.querySelector("img, picture"));
+    }
     const cells = [];
     items.forEach((item) => {
-      const summary = item.querySelector("summary.faq-question, summary");
-      const questionEl = summary ? summary.querySelector("span") || summary : null;
-      const answerEl = item.querySelector(".faq-answer, :scope > div:not(.faq-question)");
-      if (!questionEl && !answerEl) return;
-      const question = questionEl ? (questionEl.textContent || "").trim() : "";
-      const answer = answerEl || "";
-      cells.push([question, answer]);
+      const img = item.querySelector("img");
+      const picture = item.querySelector("picture");
+      const media = picture || img;
+      if (media) {
+        cells.push([media]);
+      }
     });
-    if (cells.length === 0) {
+    if (!cells.length) {
       element.replaceWith(...element.childNodes);
       return;
     }
-    const block = WebImporter.Blocks.createBlock(document, { name: "accordion-faq", cells });
-    element.replaceWith(block);
-  }
-
-  // tools/importer/parsers/hero-overlay.js
-  function parse7(element, { document }) {
-    const bgImage = element.querySelector(
-      'img.cover-image, img.utility-overlay, img[class*="cover"], img[class*="background"]'
-    );
-    const contentRoot = element.querySelector(".card-body") || element;
-    const heading = contentRoot.querySelector("h1, h2, h3, h4, h5, h6");
-    const description = contentRoot.querySelector("p.subheading, p");
-    const ctaLinks = Array.from(
-      contentRoot.querySelectorAll(".button-group a, a.button")
-    );
-    const cells = [];
-    if (bgImage) {
-      cells.push([bgImage]);
-    }
-    const contentCell = [];
-    if (heading) contentCell.push(heading);
-    if (description) contentCell.push(description);
-    contentCell.push(...ctaLinks);
-    if (!heading && !description && ctaLinks.length === 0 && !bgImage) {
-      element.replaceWith(...element.childNodes);
-      return;
-    }
-    cells.push([contentCell]);
-    const block = WebImporter.Blocks.createBlock(document, {
-      name: "hero-overlay",
-      cells
-    });
+    const block = WebImporter.Blocks.createBlock(document, { name: "cards-gallery", cells });
     element.replaceWith(block);
   }
 
@@ -332,12 +219,12 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/import-homepage.js
+  // tools/importer/import-trends-landing.js
   var PAGE_TEMPLATE = {
-    name: "homepage",
-    description: "WKND Trendsetters fashion blog homepage with hero, featured article, image gallery, testimonials tabs, latest articles cards, FAQ accordion, and CTA sections",
+    name: "trends-landing",
+    description: "Fashion trends landing page with two-column hero, three-column feature highlights, section intro, four-column article cards grid, photo gallery, and accent CTA",
     urls: [
-      "https://wknd-trendsetters.pages.dev/"
+      "https://wknd-trendsetters.pages.dev/fashion-trends-young-adults"
     ],
     blocks: [
       {
@@ -345,28 +232,16 @@ var CustomImportScript = (() => {
         instances: ["#main-content > header.section.secondary-section .grid-layout.tablet-1-column.grid-gap-xxl"]
       },
       {
-        name: "columns-article",
-        instances: ["#main-content > section.section:nth-of-type(1) .grid-layout.tablet-1-column.grid-gap-lg"]
-      },
-      {
-        name: "cards-gallery",
-        instances: ["#main-content > section.section.secondary-section:nth-of-type(2) .grid-layout.desktop-4-column.tablet-2-column-1.mobile-portrait-1-column.grid-gap-sm"]
-      },
-      {
-        name: "tabs-testimonial",
-        instances: ["#main-content > section.section:nth-of-type(3) .tabs-wrapper"]
+        name: "cards-feature",
+        instances: ["#main-content > section.section:nth-of-type(1) .grid-layout.desktop-3-column.tablet-1-column.grid-gap-xxl"]
       },
       {
         name: "cards-article",
-        instances: ["#main-content > section.section.secondary-section:nth-of-type(4) .grid-layout.desktop-4-column.tablet-2-column-1.mobile-portrait-1-column.grid-gap-md"]
+        instances: ["#trends .grid-layout.desktop-4-column.tablet-2-column-1.mobile-portrait-1-column.grid-gap-md"]
       },
       {
-        name: "accordion-faq",
-        instances: ["#main-content > section.section:nth-of-type(5) .faq-list"]
-      },
-      {
-        name: "hero-overlay",
-        instances: ["#main-content > section.section.inverse-section .grid-layout.desktop-1-column"]
+        name: "cards-gallery",
+        instances: ["#main-content > section.section.secondary-section:nth-of-type(4) .grid-layout.desktop-4-column.tablet-2-column-1.mobile-portrait-1-column.grid-gap-sm"]
       }
     ],
     sections: [
@@ -380,71 +255,63 @@ var CustomImportScript = (() => {
       },
       {
         id: "rc3",
-        name: "Featured article",
+        name: "Feature highlights",
         selector: "#main-content > section.section:nth-of-type(1)",
         style: null,
-        blocks: ["columns-article"],
+        blocks: ["cards-feature"],
         defaultContent: []
       },
       {
         id: "rc4",
-        name: "Image gallery",
+        name: "Section intro",
         selector: "#main-content > section.section.secondary-section:nth-of-type(2)",
         style: "light-grey",
-        blocks: ["cards-gallery"],
+        blocks: [],
         defaultContent: [
-          "#main-content > section.section.secondary-section:nth-of-type(2) > div.container > div.utility-text-align-center.utility-margin-bottom-8rem > h2.h2-heading",
-          "#main-content > section.section.secondary-section:nth-of-type(2) > div.container > div.utility-text-align-center.utility-margin-bottom-8rem > p.paragraph-lg"
+          "#main-content > section.section.secondary-section:nth-of-type(2) h2",
+          "#main-content > section.section.secondary-section:nth-of-type(2) p"
         ]
       },
       {
         id: "rc5",
-        name: "Testimonials",
-        selector: "#main-content > section.section:nth-of-type(3)",
+        name: "Trends cards",
+        selector: "#trends",
         style: null,
-        blocks: ["tabs-testimonial"],
-        defaultContent: []
+        blocks: ["cards-article"],
+        defaultContent: [
+          "#trends h2"
+        ]
       },
       {
         id: "rc6",
-        name: "Latest articles",
+        name: "Photo gallery",
         selector: "#main-content > section.section.secondary-section:nth-of-type(4)",
         style: "light-grey",
-        blocks: ["cards-article"],
+        blocks: ["cards-gallery"],
         defaultContent: [
-          "#main-content > section.section.secondary-section:nth-of-type(4) > div.container > div.utility-text-align-center > h2.h2-heading",
-          "#main-content > section.section.secondary-section:nth-of-type(4) > div.container > div.utility-text-align-center > p.paragraph-lg"
+          "#main-content > section.section.secondary-section:nth-of-type(4) h2",
+          "#main-content > section.section.secondary-section:nth-of-type(4) p"
         ]
       },
       {
         id: "rc7",
-        name: "FAQ",
-        selector: "#main-content > section.section:nth-of-type(5)",
-        style: null,
-        blocks: ["accordion-faq"],
+        name: "Accent CTA",
+        selector: "#main-content > section.section.accent-section",
+        style: "accent",
+        blocks: [],
         defaultContent: [
-          "#main-content > section.section:nth-of-type(5) .grid-layout.tablet-1-column.grid-gap-xxl > div > h2.h2-heading",
-          "#main-content > section.section:nth-of-type(5) .grid-layout.tablet-1-column.grid-gap-xxl > div > p.subheading"
+          "#main-content > section.section.accent-section h2",
+          "#main-content > section.section.accent-section p",
+          "#main-content > section.section.accent-section a"
         ]
-      },
-      {
-        id: "rc8",
-        name: "Closing CTA banner",
-        selector: "#main-content > section.section.inverse-section",
-        style: null,
-        blocks: ["hero-overlay"],
-        defaultContent: []
       }
     ]
   };
   var parsers = {
     "hero-feature": parse,
-    "columns-article": parse2,
-    "cards-gallery": parse3,
-    "tabs-testimonial": parse4,
-    "cards-article": parse5,
-    "accordion-faq": parse6,
-    "hero-overlay": parse7
+    "cards-feature": parse2,
+    "cards-article": parse3,
+    "cards-gallery": parse4
   };
   var transformers = [
     transform,
@@ -483,7 +350,7 @@ var CustomImportScript = (() => {
     console.log(`Found ${pageBlocks.length} block instances on page`);
     return pageBlocks;
   }
-  var import_homepage_default = {
+  var import_trends_landing_default = {
     transform: (payload) => {
       const {
         document,
@@ -527,5 +394,5 @@ var CustomImportScript = (() => {
       }];
     }
   };
-  return __toCommonJS(import_homepage_exports);
+  return __toCommonJS(import_trends_landing_exports);
 })();

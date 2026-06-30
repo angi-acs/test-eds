@@ -61,7 +61,9 @@
           "name": "Page hero",
           "selector": "#main-content > header.section.secondary-section",
           "style": "light-grey",
-          "blocks": ["hero-feature"],
+          "blocks": [
+            "hero-feature"
+          ],
           "defaultContent": []
         },
         {
@@ -69,7 +71,9 @@
           "name": "Featured article",
           "selector": "#main-content > section.section:nth-of-type(1)",
           "style": null,
-          "blocks": ["columns-article"],
+          "blocks": [
+            "columns-article"
+          ],
           "defaultContent": []
         },
         {
@@ -77,7 +81,9 @@
           "name": "Image gallery",
           "selector": "#main-content > section.section.secondary-section:nth-of-type(2)",
           "style": "light-grey",
-          "blocks": ["cards-gallery"],
+          "blocks": [
+            "cards-gallery"
+          ],
           "defaultContent": [
             "#main-content > section.section.secondary-section:nth-of-type(2) > div.container > div.utility-text-align-center.utility-margin-bottom-8rem > h2.h2-heading",
             "#main-content > section.section.secondary-section:nth-of-type(2) > div.container > div.utility-text-align-center.utility-margin-bottom-8rem > p.paragraph-lg"
@@ -88,7 +94,9 @@
           "name": "Testimonials",
           "selector": "#main-content > section.section:nth-of-type(3)",
           "style": null,
-          "blocks": ["tabs-testimonial"],
+          "blocks": [
+            "tabs-testimonial"
+          ],
           "defaultContent": []
         },
         {
@@ -96,7 +104,9 @@
           "name": "Latest articles",
           "selector": "#main-content > section.section.secondary-section:nth-of-type(4)",
           "style": "light-grey",
-          "blocks": ["cards-article"],
+          "blocks": [
+            "cards-article"
+          ],
           "defaultContent": [
             "#main-content > section.section.secondary-section:nth-of-type(4) > div.container > div.utility-text-align-center > h2.h2-heading",
             "#main-content > section.section.secondary-section:nth-of-type(4) > div.container > div.utility-text-align-center > p.paragraph-lg"
@@ -107,7 +117,9 @@
           "name": "FAQ",
           "selector": "#main-content > section.section:nth-of-type(5)",
           "style": null,
-          "blocks": ["accordion-faq"],
+          "blocks": [
+            "accordion-faq"
+          ],
           "defaultContent": [
             "#main-content > section.section:nth-of-type(5) .grid-layout.tablet-1-column.grid-gap-xxl > div > h2.h2-heading",
             "#main-content > section.section:nth-of-type(5) .grid-layout.tablet-1-column.grid-gap-xxl > div > p.subheading"
@@ -118,8 +130,115 @@
           "name": "Closing CTA banner",
           "selector": "#main-content > section.section.inverse-section",
           "style": null,
-          "blocks": ["hero-overlay"],
+          "blocks": [
+            "hero-overlay"
+          ],
           "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "trends-landing",
+      "urls": [
+        "https://wknd-trendsetters.pages.dev/fashion-trends-young-adults"
+      ],
+      "representativeUrl": "https://wknd-trendsetters.pages.dev/fashion-trends-young-adults",
+      "coverageGaps": [],
+      "description": "Fashion trends landing page with two-column hero, three-column feature highlights, section intro, four-column article cards grid, photo gallery, and accent CTA",
+      "blocks": [
+        {
+          "name": "hero-feature",
+          "instances": [
+            "#main-content > header.section.secondary-section .grid-layout.tablet-1-column.grid-gap-xxl"
+          ]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [
+            "#main-content > section.section:nth-of-type(1) .grid-layout.desktop-3-column.tablet-1-column.grid-gap-xxl"
+          ]
+        },
+        {
+          "name": "cards-article",
+          "instances": [
+            "#trends .grid-layout.desktop-4-column.tablet-2-column-1.mobile-portrait-1-column.grid-gap-md"
+          ]
+        },
+        {
+          "name": "cards-gallery",
+          "instances": [
+            "#main-content > section.section.secondary-section:nth-of-type(4) .grid-layout.desktop-4-column.tablet-2-column-1.mobile-portrait-1-column.grid-gap-sm"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc2",
+          "name": "Page hero",
+          "selector": "#main-content > header.section.secondary-section",
+          "style": "light-grey",
+          "blocks": [
+            "hero-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc3",
+          "name": "Feature highlights",
+          "selector": "#main-content > section.section:nth-of-type(1)",
+          "style": null,
+          "blocks": [
+            "cards-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc4",
+          "name": "Section intro",
+          "selector": "#main-content > section.section.secondary-section:nth-of-type(2)",
+          "style": "light-grey",
+          "blocks": [],
+          "defaultContent": [
+            "#main-content > section.section.secondary-section:nth-of-type(2) h2",
+            "#main-content > section.section.secondary-section:nth-of-type(2) p"
+          ]
+        },
+        {
+          "id": "rc5",
+          "name": "Trends cards",
+          "selector": "#trends",
+          "style": null,
+          "blocks": [
+            "cards-article"
+          ],
+          "defaultContent": [
+            "#trends h2"
+          ]
+        },
+        {
+          "id": "rc6",
+          "name": "Photo gallery",
+          "selector": "#main-content > section.section.secondary-section:nth-of-type(4)",
+          "style": "light-grey",
+          "blocks": [
+            "cards-gallery"
+          ],
+          "defaultContent": [
+            "#main-content > section.section.secondary-section:nth-of-type(4) h2",
+            "#main-content > section.section.secondary-section:nth-of-type(4) p"
+          ]
+        },
+        {
+          "id": "rc7",
+          "name": "Accent CTA",
+          "selector": "#main-content > section.section.accent-section",
+          "style": "accent",
+          "blocks": [],
+          "defaultContent": [
+            "#main-content > section.section.accent-section h2",
+            "#main-content > section.section.accent-section p",
+            "#main-content > section.section.accent-section a"
+          ]
         }
       ]
     }

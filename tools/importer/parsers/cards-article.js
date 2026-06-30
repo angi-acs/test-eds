@@ -35,21 +35,35 @@ export default function parse(element, { document }) {
     const meta = body.querySelector('.article-card-meta');
     const title = body.querySelector('h3, h2, h4, [class*="heading"]');
 
-    // Build the text cell, preserving the card link so the destination href is kept.
-    const link = document.createElement('a');
-    if (card.getAttribute('href')) link.setAttribute('href', card.getAttribute('href'));
+    const href = card.getAttribute('href');
 
+    // Build the text cell. Keep meta and title as separate block elements.
+    // The destination link is placed INSIDE the heading (<h3><a>Title</a></h3>)
+    // so it converts to a clean markdown heading link rather than collapsing
+    // a heading inside an inline link.
     const textContent = [];
     if (meta) textContent.push(meta);
-    if (title) textContent.push(title);
+
+    if (title) {
+      if (href) {
+        const link = document.createElement('a');
+        link.setAttribute('href', href);
+        link.append(...title.childNodes);
+        title.append(link);
+      }
+      textContent.push(title);
+    }
 
     if (textContent.length) {
-      link.append(...textContent);
+      cells.push([img || '', textContent]);
+    } else if (href) {
+      // No structured body content — keep image + a bare link to preserve the destination.
+      const link = document.createElement('a');
+      link.setAttribute('href', href);
+      link.textContent = card.textContent.trim() || href;
       cells.push([img || '', link]);
     } else {
-      // No structured body content — still keep image + bare link if anything is present.
-      if (card.getAttribute('href')) link.textContent = card.textContent.trim();
-      cells.push([img || '', card.getAttribute('href') ? link : (card.textContent.trim() || '')]);
+      cells.push([img || '', card.textContent.trim() || '']);
     }
   });
 

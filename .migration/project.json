@@ -1,7 +1,11 @@
 {
-  "previewOrg": "angi-acs",
-  "previewSite": "test-eds",
   "type": "da",
-  "contentHostUrl": "https://content.da.live/angi-acs/test-eds/",
-  "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+  "sites": {
+    "test-eds": {
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
+      "previewOrg": "angi-acs",
+      "previewSite": "test-eds",
+      "contentHostUrl": "https://content.da.live/angi-acs/test-eds/"
+    }
+  }
 }
