@@ -1,0 +1,36 @@
+{
+  "variantName": "hero-overlay",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-29T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.pages.dev/",
+    "originPage": "WKND Trendsetters fashion blog homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "cta-banner",
+    "imagePattern": "background"
+  },
+  "contentPattern": {
+    "structure": "background image + heading + subheading + 1 CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "closing CTA banners with full-bleed background image",
+      "dark overlay hero sections with overlaid text"
+    ],
+    "notSuitableFor": [
+      "light text-only intro heroes"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-29T00:00:00.000Z"
+  }
+}

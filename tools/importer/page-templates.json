@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://wknd-trendsetters.pages.dev/"
+      ],
+      "representativeUrl": "https://wknd-trendsetters.pages.dev/",
+      "coverageGaps": [],
+      "description": "WKND Trendsetters fashion blog homepage with hero, featured article, image gallery, testimonials tabs, latest articles cards, FAQ accordion, and CTA sections",
+      "blocks": [
+        {
+          "name": "hero-feature",
+          "instances": [
+            "#main-content > header.section.secondary-section .grid-layout.tablet-1-column.grid-gap-xxl"
+          ]
+        },
+        {
+          "name": "columns-article",
+          "instances": [
+            "#main-content > section.section:nth-of-type(1) .grid-layout.tablet-1-column.grid-gap-lg"
+          ]
+        },
+        {
+          "name": "cards-gallery",
+          "instances": [
+            "#main-content > section.section.secondary-section:nth-of-type(2) .grid-layout.desktop-4-column.tablet-2-column-1.mobile-portrait-1-column.grid-gap-sm"
+          ]
+        },
+        {
+          "name": "tabs-testimonial",
+          "instances": [
+            "#main-content > section.section:nth-of-type(3) .tabs-wrapper"
+          ]
+        },
+        {
+          "name": "cards-article",
+          "instances": [
+            "#main-content > section.section.secondary-section:nth-of-type(4) .grid-layout.desktop-4-column.tablet-2-column-1.mobile-portrait-1-column.grid-gap-md"
+          ]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [
+            "#main-content > section.section:nth-of-type(5) .faq-list"
+          ]
+        },
+        {
+          "name": "hero-overlay",
+          "instances": [
+            "#main-content > section.section.inverse-section .grid-layout.desktop-1-column"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc2",
+          "name": "Page hero",
+          "selector": "#main-content > header.section.secondary-section",
+          "style": "light-grey",
+          "blocks": ["hero-feature"],
+          "defaultContent": []
+        },
+        {
+          "id": "rc3",
+          "name": "Featured article",
+          "selector": "#main-content > section.section:nth-of-type(1)",
+          "style": null,
+          "blocks": ["columns-article"],
+          "defaultContent": []
+        },
+        {
+          "id": "rc4",
+          "name": "Image gallery",
+          "selector": "#main-content > section.section.secondary-section:nth-of-type(2)",
+          "style": "light-grey",
+          "blocks": ["cards-gallery"],
+          "defaultContent": [
+            "#main-content > section.section.secondary-section:nth-of-type(2) > div.container > div.utility-text-align-center.utility-margin-bottom-8rem > h2.h2-heading",
+            "#main-content > section.section.secondary-section:nth-of-type(2) > div.container > div.utility-text-align-center.utility-margin-bottom-8rem > p.paragraph-lg"
+          ]
+        },
+        {
+          "id": "rc5",
+          "name": "Testimonials",
+          "selector": "#main-content > section.section:nth-of-type(3)",
+          "style": null,
+          "blocks": ["tabs-testimonial"],
+          "defaultContent": []
+        },
+        {
+          "id": "rc6",
+          "name": "Latest articles",
+          "selector": "#main-content > section.section.secondary-section:nth-of-type(4)",
+          "style": "light-grey",
+          "blocks": ["cards-article"],
+          "defaultContent": [
+            "#main-content > section.section.secondary-section:nth-of-type(4) > div.container > div.utility-text-align-center > h2.h2-heading",
+            "#main-content > section.section.secondary-section:nth-of-type(4) > div.container > div.utility-text-align-center > p.paragraph-lg"
+          ]
+        },
+        {
+          "id": "rc7",
+          "name": "FAQ",
+          "selector": "#main-content > section.section:nth-of-type(5)",
+          "style": null,
+          "blocks": ["accordion-faq"],
+          "defaultContent": [
+            "#main-content > section.section:nth-of-type(5) .grid-layout.tablet-1-column.grid-gap-xxl > div > h2.h2-heading",
+            "#main-content > section.section:nth-of-type(5) .grid-layout.tablet-1-column.grid-gap-xxl > div > p.subheading"
+          ]
+        },
+        {
+          "id": "rc8",
+          "name": "Closing CTA banner",
+          "selector": "#main-content > section.section.inverse-section",
+          "style": null,
+          "blocks": ["hero-overlay"],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}
