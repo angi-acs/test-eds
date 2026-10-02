@@ -1,0 +1,43 @@
+{
+  "_provenance": {
+    "writtenBy": "replica C0 foundation",
+    "readFrom": ["scripts/aem.js", "scripts/scripts.js", "head.html", "styles/styles.css"],
+    "date": "2026-10-02"
+  },
+  "runtime": "aem-boilerplate (vendored scripts/aem.js, stock scripts/scripts.js with loadEager/loadLazy/loadDelayed; consent-check.js in loadDelayed)",
+  "blockWrapperClass": "block",
+  "blockDecoration": {
+    "blockClasses": "<name> block, data-block-name=<name>, data-block-status initialized|loading|loaded",
+    "wrapper": "parent div gets <name>-wrapper",
+    "section": "closest .section gets <name>-container",
+    "wrapTextNodes": "bare text/inline cells inside block rows are wrapped in <p>; cells whose first child is P/PRE/UL/OL/PICTURE/TABLE/BLOCKQUOTE/H1-H6 are left alone (PICTURE + siblings/text gets wrapped)"
+  },
+  "sectionWrapper": {
+    "sectionSelector": "main > div.section",
+    "defaultContent": "consecutive non-div children are grouped into div.default-content-wrapper",
+    "blockWrapper": "each block div sits in its own anonymous div, classed <name>-wrapper by decorateBlock",
+    "sectionContainerClass": "<name>-container on the section",
+    "preLoadHiding": "decorateSections sets inline style display:none on every section; loadSection clears it (display=null) when data-section-status becomes loaded",
+    "transparencyRule": "styles.css: main .section, main .section > div { margin: 0; padding: 0; max-width: none; } so element margins collapse between siblings exactly like the flat source body"
+  },
+  "buttonClasses": {
+    "paragraph": "button-wrapper",
+    "anchor": "button",
+    "variants": { "strong": "primary", "em": "secondary", "strong+em": "accent" }
+  },
+  "buttonization": "formatted-only: decorateButtons returns early unless the <a> is inside <strong> or <em>; bare links are never buttonized (also skipped: links containing <img>, paragraphs with extra text, URL-display links). Side effect on every `p a[href]`: a.title defaults to a.textContent.",
+  "autoBlocks": {
+    "hero": "never: buildAutoBlocks has no buildHeroBlock; h1 + picture is left as default content",
+    "fragment": "a[href*=\"/fragments/\"] not already inside .fragment is replaced by the fragment's children",
+    "widget": "a[href*=\"/widgets/\"] becomes a widget block"
+  },
+  "fragmentScriptPolicy": "authored content never carries <script>; head.html CSP is script-src 'nonce-aem' 'strict-dynamic' + require-trusted-types-for 'script', and scripts.js installs a default trustedTypes policy that strips <script> from createContextualFragment/document.write sinks and iframe srcdoc. Inline on* handlers never fire. loadFragment(path) fetches <path>.plain.html, runs decorateMain + loadSections, returns a <main> whose children are decorated sections.",
+  "emptySectionCollapse": true,
+  "emptySectionCollapseNote": "not provided by aem.js or the vendored boilerplate css; styles.css carries main .section:empty { display: none; } (the metadata block is consumed by the pipeline, which may leave an empty section)",
+  "fonts": "loadFonts() loads styles/fonts.css (desktop or sessionStorage flag) — the file is comment-only; the source serves no web font, font stacks fall back to Segoe UI/system-ui and Georgia",
+  "chrome": {
+    "header": "loadHeader appends div.header.block into body > header in loadLazy; header.js builds nav.site-header and MOVES the authored <a> elements from /nav (getMetadata('nav') override)",
+    "footer": "loadFooter appends div.footer.block into body > footer; footer.js builds div.site-footer and MOVES the authored <p> from /footer (getMetadata('footer') override)",
+    "visibility": "header .header / footer .footer are visibility:hidden until data-block-status=loaded; header is in normal flow (no --nav-height reservation, no fixed/sticky)"
+  }
+}

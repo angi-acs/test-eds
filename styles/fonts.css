@@ -1,0 +1,7 @@
+/*
+ * Intentionally empty. The source site declares 'Poppins' and 'Playfair Display'
+ * but never serves a web font (no <link>, no @font-face); text renders on the
+ * system fallbacks ('Segoe UI', system-ui, sans-serif / Georgia, serif).
+ * The replica keeps the same stacks in styles/styles.css and loads no font files.
+ * scripts.js still calls loadFonts(); loading this file is harmless.
+ */

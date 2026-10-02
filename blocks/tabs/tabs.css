@@ -1,0 +1,44 @@
+/* tabs — the shell, panels and team cards use the canon rules in styles.css
+   (.tabs-section, .tab-buttons, .tab-content, .team-card). The label wrapper replaces the
+   source's <button> (EW7): values lifted from the canon `.tab-buttons button` set plus the
+   UA button face measured on the live page (Arial, line-height normal, text centred
+   vertically and horizontally). The authored <p> inherits the wrapper's type (EW2). */
+.tabs .tab-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 1em 2em;
+  cursor: pointer;
+
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: Arial;
+  font-size: 1.1em;
+  font-weight: bold;
+  line-height: normal;
+  text-align: center;
+  color: var(--color-tab-text);
+  transition: color 0.2s;
+  outline: none;
+}
+
+.tabs .tab-button.active {
+  color: var(--color-tab-active);
+  border-bottom: 3px solid var(--color-tab-active);
+  background: #fff;
+}
+
+.tabs .tab-button p {
+  margin: 0;
+  max-width: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+}
+
+/* a portrait the pipeline leaves inside a <picture>: no inline strut under the image */
+.tabs .team-card picture {
+  display: flex;
+  justify-content: center;
+}

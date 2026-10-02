@@ -1,0 +1,228 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:replica",
+    "writtenAt": "2026-10-02T10:04:03Z",
+    "stardustVersion": "0.27.0",
+    "regime": "prototype",
+    "mainScope": "body (the live page has no content root: top-level body children, no consent/analytics text; control run content-diff live-vs-live --main body: 23/23 nodes, findings none)"
+  },
+  "archetypes": [
+    {
+      "pageType": "landing",
+      "archetype": "index",
+      "slug": "index",
+      "status": "done",
+      "recordedAt": "2026-10-02T10:04:03Z",
+      "prototype": "stardust/prototypes/index-proposed.html",
+      "css": [
+        "stardust/prototypes/canon.css",
+        "stardust/prototypes/landing.css"
+      ],
+      "js": [
+        "stardust/prototypes/tabs.js"
+      ],
+      "breakpoints": {
+        "360": {
+          "iterations": 1,
+          "result": {
+            "structuralRed": 0,
+            "visualFlags": "3 justified",
+            "pixelPct": 0.02,
+            "heightDelta": 0,
+            "overflowPx": 0,
+            "clipped": 0,
+            "pass": true
+          },
+          "chrome": {
+            "parity": "gates/index-360/chrome-live-regions.json (exit 0)",
+            "headerCropPct": 0,
+            "footerCropPct": 0
+          },
+          "justified": [
+            {
+              "probe": "visual",
+              "flag": "STRETCHED IMAGE ×3",
+              "why": "same as 1440"
+            },
+            {
+              "probe": "pixel",
+              "flag": "245 px in the tab strip",
+              "why": "R-02 applied: the strip scrolls on the build where the live page overflows the viewport"
+            }
+          ],
+          "residuals": [],
+          "captureState": []
+        },
+        "1440": {
+          "iterations": 1,
+          "result": {
+            "structuralRed": 0,
+            "visualFlags": "3 justified",
+            "pixelPct": 0,
+            "heightDelta": 0,
+            "overflowPx": 0,
+            "clipped": 0,
+            "pass": true
+          },
+          "chrome": {
+            "parity": "gates/index-1440/chrome-live-regions.json (regions .site-header/.site-footer, exit 0)",
+            "headerCropPct": 0,
+            "footerCropPct": 0
+          },
+          "justified": [
+            {
+              "probe": "visual",
+              "flag": "STRETCHED IMAGE ×3 (800x600 → 16:9)",
+              "why": "mirrors the live aspect-ratio: 16/9 rule on table img"
+            },
+            {
+              "probe": "chrome-parity (gate.sh line)",
+              "flag": "no <header> on either side",
+              "why": "the site uses <nav class=site-header>; region-mapped run is quiet"
+            }
+          ],
+          "residuals": [],
+          "captureState": []
+        }
+      },
+      "capProbe": {
+        "width": 2560,
+        "verdict": "PASS",
+        "rows": 10,
+        "failed": 0,
+        "evidence": "stardust/replica/gates/index-2560/cap-iter.json"
+      },
+      "motion": {
+        "observed": [
+          "hover .site-header a (background, color, 200ms)",
+          "hover table td (box-shadow, transform, 300ms)",
+          "entrance fadeIn on tab panels",
+          "class active toggled 4× by the tab buttons"
+        ],
+        "implemented": [
+          "nav link hover",
+          "media tile hover",
+          "fadeIn keyframes",
+          "tabs.js active toggle"
+        ],
+        "dead": [
+          "hover .tab-buttons button (transition declared, no hover rule)",
+          "hover .team-card (transition declared, no hover rule)"
+        ],
+        "compare": "stardust/replica/motion/index-compare.json (8 parity, 0 missing, 0 extra)"
+      },
+      "register": [
+        "R-02 applied (tab strip overflow-x: auto)"
+      ]
+    },
+    {
+      "pageType": "static",
+      "archetype": "page1",
+      "slug": "page1",
+      "status": "done",
+      "recordedAt": "2026-10-02T10:04:03Z",
+      "prototype": "stardust/prototypes/page1-proposed.html",
+      "css": [
+        "stardust/prototypes/canon.css"
+      ],
+      "js": [
+        "stardust/prototypes/tabs.js"
+      ],
+      "breakpoints": {
+        "360": {
+          "iterations": 2,
+          "result": {
+            "structuralRed": 0,
+            "visualFlags": "none",
+            "pixelPct": 0.06,
+            "heightDelta": 0,
+            "overflowPx": 0,
+            "clipped": 0,
+            "pass": true
+          },
+          "chrome": {
+            "parity": "gates/page1-360/chrome-live-regions.json (exit 0)",
+            "headerCropPct": 0,
+            "footerCropPct": 0
+          },
+          "justified": [
+            {
+              "probe": "pixel",
+              "flag": "270 px in the tab strip",
+              "why": "R-02 applied"
+            }
+          ],
+          "residuals": [],
+          "captureState": [],
+          "note": "iter1 failed the horizontal-overflow assert (+41 px, mirrored from live); R-02 fixed it, iter2 scrollWidth 360"
+        },
+        "1440": {
+          "iterations": 2,
+          "result": {
+            "structuralRed": 0,
+            "visualFlags": "none",
+            "pixelPct": 0,
+            "heightDelta": 0,
+            "overflowPx": 0,
+            "clipped": 0,
+            "pass": true
+          },
+          "chrome": {
+            "parity": "gates/page1-1440/chrome-live-regions.json (exit 0)",
+            "headerCropPct": 0,
+            "footerCropPct": 0
+          },
+          "justified": [
+            {
+              "probe": "chrome-parity (gate.sh line)",
+              "flag": "no <header> on either side",
+              "why": "region-mapped run is quiet"
+            }
+          ],
+          "residuals": [],
+          "captureState": [],
+          "note": "iter1 already passed; iter2 is the confirmation round after the R-02 fix"
+        }
+      },
+      "capProbe": {
+        "width": 2560,
+        "verdict": "PASS",
+        "rows": 6,
+        "failed": 0,
+        "evidence": "stardust/replica/gates/page1-2560/cap-iter.json"
+      },
+      "motion": {
+        "observed": [
+          "hover .site-header a (200ms)",
+          "entrance fadeIn on tab panels",
+          "class active toggled 4×"
+        ],
+        "implemented": [
+          "nav link hover",
+          "fadeIn keyframes",
+          "tabs.js active toggle"
+        ],
+        "dead": [
+          "hover .tab-buttons button",
+          "hover .team-card"
+        ],
+        "compare": "stardust/replica/motion/page1-compare.json (5 parity, 0 missing, 0 extra)"
+      },
+      "register": [
+        "R-02 applied"
+      ]
+    }
+  ],
+  "siblings": {},
+  "migrate": {
+    "at": "2026-10-02T11:15:46.647Z",
+    "pages": 2,
+    "archetypes": 2,
+    "siblings": 0,
+    "thin": 0,
+    "gates": {
+      "content-fidelity": 2
+    },
+    "missing": {}
+  }
+}
