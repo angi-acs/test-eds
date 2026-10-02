@@ -1,0 +1,9 @@
+{
+  "_provenance": { "writtenBy": "stardust:replica", "phase": "handoff/migrate", "stardustVersion": "0.27.0" },
+  "units": {
+    "plan": { "status": "done", "kind": "plan", "templates": ["index", "page1"], "pages": 2,
+      "startedAt": "2026-10-02T10:10:31Z", "endedAt": "2026-10-02T10:12:40Z",
+      "verdict": "rendered 2, unchanged 0, refused 0, passthrough 0 → stardust/migrated/ (Path A: index landing, page1 static; 0 siblings → no render clusters; modules index [media-grid, highlight, tabs], page1 [tabs]; 5 dynamic-dependency deviations)" },
+    "report": { "status": "pending", "kind": "report", "templates": ["index", "page1"], "pages": 2 }
+  }
+}

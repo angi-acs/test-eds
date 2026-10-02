@@ -1,0 +1,84 @@
+{
+  "slug": "index",
+  "type": "landing",
+  "renderBranch": "A",
+  "template": null,
+  "modules": [
+    "media-grid",
+    "highlight",
+    "tabs"
+  ],
+  "slotsFilled": [
+    "h1",
+    "p",
+    "media-grid",
+    "h2",
+    "media-grid",
+    "content-block",
+    "tabs-section"
+  ],
+  "canonShas": {
+    "header": null,
+    "footer": "5ccabaa22450",
+    "css": "c5dbb3810ca9"
+  },
+  "deviations": [],
+  "migrationDecisions": [],
+  "metadata": {
+    "title": "Good Morning!",
+    "description": null,
+    "canonical": null,
+    "lang": "en"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Good Morning!",
+    "url": "https://static-website.david-bosschaert.workers.dev/"
+  },
+  "migratedAt": "2026-10-02T10:10:31Z",
+  "designMdSha": "d967d906fbc0",
+  "designJsonSha": "c73fc878b0f4",
+  "sourceCurrentSha": "358f631a015d",
+  "sourceProposedSha": "48911fb77b73",
+  "fidelityTier": "archetype",
+  "archetypeSource": null,
+  "archetypeSha": null,
+  "variants": [],
+  "gatesPassed": [
+    "content-fidelity"
+  ],
+  "gateEvidence": {
+    "content-fidelity": "prototype carries the captured strings verbatim; archetype rounds content-diff live-vs-proto findings none (23/23 nodes) at 1440 and 360",
+    "pixel-gate-1440": "FAIL: content MISSING 2 / HIDDEN 0 — 0.04%, height delta 0px, clipped 0, content MISSING 2 / HIDDEN 0 (stardust/replica/gates/all-1440/summary.md) [published regime]",
+    "pixel-gate-360": "FAIL: content MISSING 2 / HIDDEN 0 — 0.20%, height delta 0px, clipped 0, content MISSING 2 / HIDDEN 0 (stardust/replica/gates/all-360/summary.md) [published regime]",
+    "delivery-lint": "FAIL: 0 P0 · 1 P1 · 1 P2 (delivery-lint --path /)"
+  },
+  "contentDeviations": [
+    {
+      "kind": "dynamic-dependency",
+      "source": "YouTube iframe embed/b4Rr_7y068U in the first media grid",
+      "target": "media-grid block renders the authored YouTube link as the same iframe (embed-passthrough, dynamic-features.md row 1)",
+      "reason": "third-party player; re-authored from the captured src, no local copy"
+    },
+    {
+      "kind": "dynamic-dependency",
+      "source": "inline showTabSection(idx) onclick handlers on 3 tab buttons",
+      "target": "tabs block JS toggles .active by class (client-only, row 2)",
+      "reason": "inline script is not deliverable; behaviour reproduced in block JS, motion parity 8/8"
+    },
+    {
+      "kind": "dynamic-dependency",
+      "source": "hot-linked images from picsum.photos and randomuser.me",
+      "target": "same external URLs carried verbatim (static-snapshot, row 3)",
+      "reason": "replica capture-state policy; owner may supply first-party assets later"
+    }
+  ],
+  "assetsBundled": 3,
+  "missingAssets": [],
+  "brokenInternalLinks": [],
+  "outputPath": "index.html",
+  "outputPathDefault": null,
+  "sidecar": "_meta.json",
+  "driverVersion": "1"
+}

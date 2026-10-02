@@ -1,0 +1,118 @@
+{
+ "_provenance": {
+  "writtenBy": "stardust:dynamics check",
+  "writtenAt": "2026-10-02T11:20:24.681Z",
+  "origin": "https://main--0f28c839--aemcoder.aem.live",
+  "parity": "stardust/dynamics/parity.json"
+ },
+ "results": [
+  {
+   "feature": "home video embed (YouTube)",
+   "id": "m-youtube-embed",
+   "class": "M",
+   "status": "done",
+   "type": "dom-count",
+   "pass": true,
+   "detail": "1 × iframe[src*=\"youtube.com/embed/b4Rr_7y068U\"] (min 1)",
+   "thirdParty": "www.youtube.com:200×7 fonts.gstatic.com:200×1 googleads.g.doubleclick.net:302×1 static.doubleclick.net:200×1 googleads.g.doubleclick.net:200×1 www.google.com:200×1 i.ytimg.com:200×1 www.gstatic.com:200×1 yt3.ggpht.com:200×1 www.youtube.com:204×1 jnn-pa.googleapis.com:200×1",
+   "ms": 2992,
+   "environmentLimit": null
+  },
+  {
+   "feature": "home video embed (YouTube)",
+   "id": "m-youtube-embed",
+   "class": "M",
+   "status": "done",
+   "type": "no-page-errors",
+   "pass": true,
+   "detail": "none on 1 page(s)",
+   "thirdParty": "",
+   "ms": 2434,
+   "environmentLimit": null
+  },
+  {
+   "feature": "team tabs (client-only tab switching)",
+   "id": "c-team-tabs",
+   "class": "C",
+   "status": "done",
+   "type": "dom-count",
+   "pass": true,
+   "detail": "3 × .tabs .tab-button (min 3)",
+   "thirdParty": "www.youtube.com:200×8 fonts.gstatic.com:200×1 static.doubleclick.net:200×1 googleads.g.doubleclick.net:302×1 www.google.com:200×1 googleads.g.doubleclick.net:200×1 i.ytimg.com:200×1 yt3.ggpht.com:200×1 www.youtube.com:204×1 jnn-pa.googleapis.com:200×1",
+   "ms": 2387,
+   "environmentLimit": null
+  },
+  {
+   "feature": "team tabs (client-only tab switching)",
+   "id": "c-team-tabs",
+   "class": "C",
+   "status": "done",
+   "type": "dom-count",
+   "pass": true,
+   "detail": "1 × .tabs .tab-content.active (min 1)",
+   "thirdParty": "www.youtube.com:200×8 fonts.gstatic.com:200×1 static.doubleclick.net:200×1 googleads.g.doubleclick.net:302×1 www.google.com:200×1 googleads.g.doubleclick.net:200×1 i.ytimg.com:200×1 yt3.ggpht.com:200×1 www.youtube.com:204×1 jnn-pa.googleapis.com:200×1",
+   "ms": 2461,
+   "environmentLimit": null
+  },
+  {
+   "feature": "team tabs (client-only tab switching)",
+   "id": "c-team-tabs",
+   "class": "C",
+   "status": "done",
+   "type": "dom-count",
+   "pass": true,
+   "detail": "3 × .tabs .tab-button (min 3)",
+   "thirdParty": "",
+   "ms": 1878,
+   "environmentLimit": null
+  },
+  {
+   "feature": "team tabs (client-only tab switching)",
+   "id": "c-team-tabs",
+   "class": "C",
+   "status": "done",
+   "type": "dom-count",
+   "pass": true,
+   "detail": "1 × .tabs .tab-content.active (min 1)",
+   "thirdParty": "",
+   "ms": 1825,
+   "environmentLimit": null
+  },
+  {
+   "feature": "team tabs (client-only tab switching)",
+   "id": "c-team-tabs",
+   "class": "C",
+   "status": "done",
+   "type": "no-page-errors",
+   "pass": true,
+   "detail": "none on 2 page(s)",
+   "thirdParty": "",
+   "ms": 4371,
+   "environmentLimit": null
+  },
+  {
+   "feature": "hot-linked imagery (picsum.photos, randomuser.me)",
+   "id": "i-hotlinked-images",
+   "class": "I",
+   "status": "done",
+   "type": "dom-count",
+   "pass": true,
+   "detail": "9 × main img (min 9)",
+   "thirdParty": "www.youtube.com:200×8 fonts.gstatic.com:200×1 googleads.g.doubleclick.net:302×1 static.doubleclick.net:200×1 www.google.com:200×1 googleads.g.doubleclick.net:200×1 i.ytimg.com:200×1 yt3.ggpht.com:200×1 www.youtube.com:204×1 jnn-pa.googleapis.com:200×1",
+   "ms": 2473,
+   "environmentLimit": null
+  },
+  {
+   "feature": "hot-linked imagery (picsum.photos, randomuser.me)",
+   "id": "i-hotlinked-images",
+   "class": "I",
+   "status": "done",
+   "type": "dom-count",
+   "pass": true,
+   "detail": "6 × main img (min 6)",
+   "thirdParty": "",
+   "ms": 1826,
+   "environmentLimit": null
+  }
+ ]
+}

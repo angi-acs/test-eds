@@ -1,0 +1,55 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:rollout/plan",
+    "writtenAt": "2026-10-02T10:12:05.774Z",
+    "readArtifacts": [
+      "stardust/rollout/coverage"
+    ],
+    "stardustVersion": "0.0.0"
+  },
+  "generatedAt": "2026-10-02T10:12:05.774Z",
+  "fragments": [],
+  "deliveryOrder": [
+    "index",
+    "page1"
+  ],
+  "steps": [
+    {
+      "slug": "index",
+      "path": "/",
+      "templateId": "index",
+      "status": "pending",
+      "isRepresentative": true,
+      "convert": [
+        {
+          "id": "media-grid",
+          "edsBlockName": "media-grid"
+        },
+        {
+          "id": "highlight",
+          "edsBlockName": "highlight"
+        },
+        {
+          "id": "tabs",
+          "edsBlockName": "tabs"
+        }
+      ],
+      "reuse": []
+    },
+    {
+      "slug": "page1",
+      "path": "/page1",
+      "templateId": "page1",
+      "status": "pending",
+      "isRepresentative": false,
+      "convert": [],
+      "reuse": [
+        {
+          "id": "tabs",
+          "edsBlockName": "tabs",
+          "convertedBy": "index"
+        }
+      ]
+    }
+  ]
+}
