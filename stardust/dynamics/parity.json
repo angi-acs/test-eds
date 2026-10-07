@@ -1,0 +1,106 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:dynamics (replica D2-dynamic)",
+    "writtenAt": "2026-10-02T11:19:17.361Z",
+    "readArtifacts": [
+      "stardust/dynamic-features.md",
+      "stardust/dynamic-features-plan.md",
+      "stardust/replica/motion/index.json",
+      "stardust/replica/motion/index-compare.json"
+    ]
+  },
+  "method": "3 curated rows from the Phase 2 triage, delivered by the archetype blocks (media-grid embed-passthrough, tabs client-only, images carried as captured); replayed on the published origin",
+  "features": [
+    {
+      "id": "m-youtube-embed",
+      "feature": "home video embed (YouTube)",
+      "class": "M",
+      "pages": 1,
+      "disposition": "embed-passthrough",
+      "reproducibility": "self",
+      "status": "done",
+      "verifiedBy": "media-grid block renders the authored embed URL as the same iframe src https://www.youtube.com/embed/b4Rr_7y068U; pixel gate 1440 0.04% / 360 0.2% with the poster frame inside the capture",
+      "checks": [
+        {
+          "type": "dom-count",
+          "path": "/",
+          "selector": "iframe[src*=\"youtube.com/embed/b4Rr_7y068U\"]",
+          "min": 1
+        },
+        {
+          "type": "no-page-errors",
+          "paths": [
+            "/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c-team-tabs",
+      "feature": "team tabs (client-only tab switching)",
+      "class": "C",
+      "pages": 2,
+      "disposition": "rebuild-native",
+      "reproducibility": "self",
+      "status": "done",
+      "verifiedBy": "tabs block: 3 tab buttons, first panel active on load, click toggles .active (motion-compare live vs build: index 8/8, page1 5/5 behaviours in parity, Phase 3); gated 1440/360 on both pages",
+      "checks": [
+        {
+          "type": "dom-count",
+          "path": "/",
+          "selector": ".tabs .tab-button",
+          "min": 3
+        },
+        {
+          "type": "dom-count",
+          "path": "/",
+          "selector": ".tabs .tab-content.active",
+          "min": 1
+        },
+        {
+          "type": "dom-count",
+          "path": "/page1",
+          "selector": ".tabs .tab-button",
+          "min": 3
+        },
+        {
+          "type": "dom-count",
+          "path": "/page1",
+          "selector": ".tabs .tab-content.active",
+          "min": 1
+        },
+        {
+          "type": "no-page-errors",
+          "paths": [
+            "/",
+            "/page1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "i-hotlinked-images",
+      "feature": "hot-linked imagery (picsum.photos, randomuser.me)",
+      "class": "I",
+      "pages": 2,
+      "disposition": "static-snapshot (platform-hosted renditions)",
+      "reproducibility": "self",
+      "status": "done",
+      "verifiedBy": "image URLs authored verbatim as captured (capture-state policy); the delivery pipeline rehosts every authored image as a platform media_ rendition at ingest, so the served pages carry the captured pictures on the new origin (9 on /, 6 on /page1); content-presence in the all-pages gate reports 0 MISSING images; unfreeze when the owner supplies first-party assets",
+      "checks": [
+        {
+          "type": "dom-count",
+          "path": "/",
+          "selector": "main img",
+          "min": 9
+        },
+        {
+          "type": "dom-count",
+          "path": "/page1",
+          "selector": "main img",
+          "min": 6
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:replica",
+    "phase": "handoff/C-deliver",
+    "stardustVersion": "0.27.0"
+  },
+  "units": {
+    "foundation": {
+      "status": "done",
+      "kind": "foundation",
+      "templates": [
+        "index",
+        "page1"
+      ],
+      "pages": 2,
+      "blocks": 2,
+      "gates": {
+        "chrome": "nav+footer .plain.html 200 on aem.page and aem.live, robots noindex; pixel/crop/chrome-parity run with archetype:index (no page delivered yet)"
+      },
+      "startedAt": "2026-10-02T10:15:00Z",
+      "endedAt": "2026-10-02T10:21:58Z",
+      "verdict": "foundation: nav+footer live 2/2, code synced yes, lint pass, files: stardust/runtime-contract.json, styles/styles.css, styles/fonts.css, styles/lazy-styles.css, blocks/header/*, blocks/footer/*, content/nav.html, content/footer.html",
+      "frozen": "stardust/rollout/foundation-freeze.json (16 files)"
+    },
+    "archetype:index": {
+      "status": "done",
+      "kind": "archetype",
+      "templates": [
+        "index"
+      ],
+      "pages": 1,
+      "blocks": 3,
+      "startedAt": "2026-10-02T10:24:48Z",
+      "endedAt": "2026-10-02T11:01:29Z",
+      "gates": {
+        "360": {
+          "archetype": "0.2%",
+          "heightDelta": 0,
+          "clip": 0,
+          "content": "MISSING 2 nav links (same documented override) / HIDDEN 0"
+        },
+        "1440": {
+          "archetype": "0.04%",
+          "heightDelta": 0,
+          "clip": 0,
+          "content": "MISSING 2 nav links (documented override: chrome on served side) / HIDDEN 0"
+        },
+        "crop": "header 0.00%, footer 0.00% at 1440",
+        "chrome": "1 delta (footer <p> vs live bare text node; footer crop 0.00%)",
+        "rounds": 1,
+        "evidence": "stardust/replica/gates/all-1440/runs, all-360/runs, overrides.json"
+      },
+      "verdict": "archetype:index: pages 1/1 live, blocks 3, gate 1440 0.04% Δh 0px clip 0 content 2/0 / 360 0.2% Δh 0px clip 0 content 2/0, crop header 0.00% footer 0.00%, chrome Δ 1, requests 0, rounds 1"
+    },
+    "cluster:index": {
+      "status": "done",
+      "kind": "cluster",
+      "templates": [
+        "index"
+      ],
+      "pages": 0,
+      "blocks": 0,
+      "startedAt": "2026-10-02T11:01:51Z",
+      "endedAt": "2026-10-02T11:01:51Z",
+      "gates": {
+        "note": "0 siblings — the template is the archetype alone; its row is the archetype:index unit gates",
+        "ref": "units.archetype:index.gates"
+      },
+      "verdict": "cluster:index: pages 1/1 live (archetype only, 0 siblings, no render unit), blocks 3, gate 1440 0.04% / 360 0.2%, requests 0"
+    },
+    "archetype:page1": {
+      "status": "done",
+      "kind": "archetype",
+      "templates": [
+        "page1"
+      ],
+      "pages": 1,
+      "blocks": 0,
+      "startedAt": "2026-10-02T11:02:10Z",
+      "endedAt": "2026-10-02T11:13:19Z",
+      "gates": {
+        "360": {
+          "archetype": "0.06%",
+          "heightDelta": 0,
+          "clip": 0,
+          "content": "MISSING 2 nav links (same documented override) / HIDDEN 0"
+        },
+        "1440": {
+          "archetype": "0.00%",
+          "heightDelta": 0,
+          "clip": 0,
+          "content": "MISSING 2 nav links (documented override: chrome on served side) / HIDDEN 0"
+        },
+        "crop": "header 0.00%, footer 0.00% at 1440",
+        "chrome": "1 delta (footer <p> vs live bare text node; footer crop 0.00%)",
+        "rounds": 0,
+        "evidence": "stardust/replica/gates/all-1440/runs, all-360/runs, overrides.json"
+      },
+      "verdict": "archetype:page1: pages 1/1 live, blocks 1 (tabs reused), gate 1440 0.00% Δh 0px clip 0 content 2/0 / 360 0.06% Δh 0px clip 0 content 2/0, crop header 0.00% footer 0.00%, chrome Δ 1, requests 0, rounds 0"
+    },
+    "cluster:page1": {
+      "status": "done",
+      "kind": "cluster",
+      "templates": [
+        "page1"
+      ],
+      "pages": 0,
+      "blocks": 0,
+      "startedAt": "2026-10-02T11:13:35Z",
+      "endedAt": "2026-10-02T11:13:35Z",
+      "gates": {
+        "note": "0 siblings — the template is the archetype alone; its row is the archetype:page1 unit gates",
+        "ref": "units.archetype:page1.gates"
+      },
+      "verdict": "cluster:page1: pages 1/1 live (archetype only, 0 siblings, no render unit), blocks 1 (tabs reused), gate 1440 0.00% / 360 0.06%, requests 0"
+    },
+    "gate-all": {
+      "status": "done",
+      "kind": "final",
+      "templates": [
+        "index",
+        "page1"
+      ],
+      "pages": 2,
+      "startedAt": "2026-10-02T11:13:52Z",
+      "endedAt": "2026-10-02T11:16:03Z",
+      "gates": {
+        "360": {
+          "index": "0.2%",
+          "page1": "0.06%",
+          "heightDelta": 0,
+          "clip": 0,
+          "content": "same 2 documented overrides"
+        },
+        "1440": {
+          "index": "0.04%",
+          "page1": "0.00%",
+          "heightDelta": 0,
+          "clip": 0,
+          "content": "2 documented overrides (nav links counted as origin content: no <header> landmark on the origin)"
+        },
+        "summary": "stardust/replica/gates/all-1440/summary.json, all-360/summary.json; coverage delivery.gate.pass true for 2/2"
+      },
+      "verdict": "gate-all: 2/2 delivered at 1440 (index 0.04%, page1 0.00%) and 360 (index 0.2%, page1 0.06%), Δh 0, clip 0, content via 2 documented overrides; coverage gate rows written"
+    },
+    "final": {
+      "status": "done",
+      "kind": "final",
+      "templates": [
+        "index",
+        "page1"
+      ],
+      "pages": 2,
+      "startedAt": "2026-10-02T11:16:41Z",
+      "endedAt": "2026-10-02T11:16:41Z",
+      "verdict": "final: foundation unchanged (16 files), 0 foundation requests queued, no re-gate needed; C-deliver end"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "overall": "In progress",
+  "steps": [
+    {
+      "name": "Analyzing your site",
+      "state": "Done",
+      "fraction": 0.1
+    },
+    {
+      "name": "Capturing brand and design",
+      "state": "Done"
+    },
+    {
+      "name": "Rebuilding page templates",
+      "state": "Done"
+    },
+    {
+      "name": "Checking fidelity",
+      "state": "Done"
+    },
+    {
+      "name": "Migrating your pages",
+      "state": "In progress"
+    }
+  ],
+  "templates": [
+    {
+      "name": "Home page",
+      "pages": 1,
+      "desktop": "Yes",
+      "mobile": "Yes",
+      "status": "Done"
+    },
+    {
+      "name": "Team page",
+      "pages": 1,
+      "desktop": "Yes",
+      "mobile": "Yes",
+      "status": "Done"
+    }
+  ],
+  "pages": [
+    {
+      "slug": "index",
+      "title": "Home",
+      "url": "https://main--0f28c839--aemcoder.aem.page/",
+      "ready": false
+    },
+    {
+      "slug": "page1",
+      "title": "Page 1",
+      "url": "https://main--0f28c839--aemcoder.aem.page/page1",
+      "ready": false
+    }
+  ],
+  "now": "The site foundation is in place on the new platform: the shared styles, the navigation bar and the footer are live and match your current site. The next step moves the home page onto the preview site and checks it against your live site on desktop and mobile.",
+  "next": "The home page goes onto the preview site first, then the team page; each is checked against your live site before it is made live."
+}

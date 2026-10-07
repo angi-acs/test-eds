@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  writtenBy:        stardust:extract
+  writtenAt:        2026-10-02T09:18:00Z
+  readArtifacts:
+    - stardust/current/_brand-extraction.json
+    - stardust/current/_computed-styles.json
+    - stardust/current/_crawl-log.json
+    - stardust/current/pages/index.json
+    - stardust/current/pages/page1.json
+  synthesizedInputs: []
+  stardustVersion:  0.27.0
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand review — Super Page (current state)</title>
+<style>
+:root{--primary:#6a1b9a;--accent:#00897b;--cyan:#26c6da;--pink:#ec407a;--text:#333;--muted:#777;--surface:#fff;--ground:linear-gradient(135deg,#e0f7fa 0%,#f3e5f5 50%,#fff8e1 100%)}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins','Segoe UI',system-ui,sans-serif;line-height:1.6;color:var(--text);background:var(--ground);min-height:100vh}
+nav.review{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;max-width:1200px;margin:0 auto;padding:.75rem 1.5rem;background:var(--surface);border-radius:0 0 12px 12px;box-shadow:0 4px 20px rgba(106,27,154,.12)}
+nav.review a{color:var(--primary);font-weight:600;text-decoration:none;font-size:.9rem;padding:.2rem .6rem;border-radius:8px}
+nav.review a:hover{background:#f3e5f5;color:#4a148c}
+main{max-width:1200px;margin:0 auto;padding:2rem}
+section{background:var(--surface);border-radius:12px;box-shadow:0 4px 20px rgba(106,27,154,.12);padding:1.5rem 2rem;margin:1.5rem 0;break-inside:avoid}
+h1,h2{font-family:'Playfair Display',Georgia,serif;color:var(--primary);margin:0 0 .5rem}
+h1{font-size:2.5rem;text-shadow:2px 2px 4px rgba(106,27,154,.15)}
+h2{font-size:1.6rem;color:var(--accent);display:inline-block;border-bottom:3px solid var(--cyan);padding-bottom:.3rem}
+p.hero-line{color:var(--accent);font-size:1.3rem;font-weight:600;margin:.5rem 0}
+.badge{display:inline-block;font-size:.75rem;font-weight:700;padding:.15rem .6rem;border-radius:999px;background:#f3e5f5;color:var(--primary);vertical-align:middle;margin-left:.5rem}
+.badge.warn{background:#fce4ec;color:var(--pink)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.stat{background:#f8f8f8;border-radius:10px;padding:1rem}
+.stat b{display:block;font-size:1.4rem;color:var(--primary)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
+.swatch{border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.07);font-size:.8rem}
+.swatch i{display:block;height:56px}
+.swatch div{padding:.5rem}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em}
+.pages{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.pages figure{margin:0}
+.pages img{width:100%;border-radius:8px;border:1px solid #e0e0e0}
+.pages figcaption{font-size:.85rem;color:var(--muted)}
+.spec{margin:.75rem 0;padding:.75rem 1rem;border-left:4px solid var(--pink);background:linear-gradient(135deg,#fff 0%,#fce4ec 100%);border-radius:8px}
+.spec small{display:block;color:var(--muted);font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-size:.8rem;font-weight:400;letter-spacing:0;text-shadow:none}
+.tensions{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem}
+.tension{border:2px solid var(--cyan);border-radius:12px;padding:1rem}
+.tension h3{margin:0 0 .4rem;font-size:1rem;color:var(--primary)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+td,th{padding:.4rem .6rem;border-bottom:1px solid #e0e0e0;text-align:left;vertical-align:top}
+.pill{display:inline-block;padding:.2rem .7rem;border-radius:999px;background:#f8f8f8;border:1px solid #ddd;margin:.15rem;font-size:.85rem}
+.motifs .m{background:#fff;padding:1rem;text-align:center;font-size:.8rem}
+.bars{display:flex;align-items:flex-end;gap:.75rem;height:60px}
+.bars span{display:block;width:40px;background:var(--primary);border-radius:4px 4px 0 0;position:relative}
+.bars span::after{content:attr(data-v);position:absolute;top:-1.4em;left:0;right:0;text-align:center;font-size:.7rem;color:var(--muted)}
+footer.review{text-align:center;color:var(--muted);font-size:.9rem;padding:1.5rem;border-top:2px solid #e0e0e0;max-width:1200px;margin:2rem auto 0}
+@media print{nav.review{position:static}}
+</style>
+</head>
+<body>
+<nav class="review"><a href="#masthead">Masthead</a><a href="#coverage">Coverage</a><a href="#pages">Pages</a><a href="#palette">Palette</a><a href="#type">Typography</a><a href="#voice">Voice</a><a href="#tensions">Tensions</a><a href="#motifs">Motifs</a><a href="#components">Components</a><a href="#system">System components</a><a href="#logo">Logo</a><a href="#spacing">Spacing</a></nav>
+<main>
+<section id="masthead">
+  <h1>Super Page <span class="badge">current state</span></h1>
+  <p class="hero-line">Super page</p>
+  <p>Tagline: <em>Tralalala ladida lalala ladida lalala ladida lalala ladida lalala ladida</em> (first paragraph; the site has no meta description or Open Graph tags).</p>
+  <p class="mono"><a href="https://static-website.david-bosschaert.workers.dev/">https://static-website.david-bosschaert.workers.dev/</a> · captured 2026-10-02</p>
+</section>
+
+<section id="coverage">
+  <h2>Coverage</h2>
+  <div class="stats">
+    <div class="stat"><b>2 / 2</b>pages extracted (headless Chromium, 2 of 2 discovered; 0 failures)</div>
+    <div class="stat"><b>medium · 2500 ms</b>wait strategy, both pages settled; vision check 2 ok</div>
+    <div class="stat"><b>16 colours · 2 faces · 4 radii</b>brand surface from 2 pages × 2 widths (1440, 360)</div>
+  </div>
+  <p>Missing on the source (not fabricated): logo, favicon, font files, meta description, OG tags.</p>
+</section>
+
+<section id="pages">
+  <h2>Pages</h2>
+  <div class="pages">
+    <figure><img src="assets/screenshots/index-thumb.png" alt="Home page capture"><figcaption>Good Morning! · <span class="mono">/</span> · landing</figcaption></figure>
+    <figure><img src="assets/screenshots/page1-thumb.png" alt="Page 1 capture"><figcaption>Good Morning! · <span class="mono">/page1</span> · static</figcaption></figure>
+  </div>
+</section>
+
+<section id="palette">
+  <h2>Colour palette</h2>
+  <div class="grid">
+    <div class="swatch"><i style="background:#6a1b9a"></i><div><b>#6a1b9a</b> primary<br>text, shadow tint · 8× · h1, nav</div></div>
+    <div class="swatch"><i style="background:#4a148c"></i><div><b>#4a148c</b> primary-deep<br>text (hover) · 1× · nav hover</div></div>
+    <div class="swatch"><i style="background:#5e35b1"></i><div><b>#5e35b1</b> lede<br>text · 4× · p</div></div>
+    <div class="swatch"><i style="background:#00897b"></i><div><b>#00897b</b> secondary<br>text · 1× · h2</div></div>
+    <div class="swatch"><i style="background:#26c6da"></i><div><b>#26c6da</b> secondary-accent<br>border · 2× · h2, td:hover</div></div>
+    <div class="swatch"><i style="background:#ec407a"></i><div><b>#ec407a</b> tertiary<br>border · 1× · content block</div></div>
+    <div class="swatch"><i style="background:#2196f3"></i><div><b>#2196f3</b> tab-active<br>text, border · 2× · tabs</div></div>
+    <div class="swatch"><i style="background:#333333"></i><div><b>#333333</b> text-primary<br>text · body</div></div>
+    <div class="swatch"><i style="background:#666666"></i><div><b>#666666</b> text-tab<br>text · 4× · tab buttons</div></div>
+    <div class="swatch"><i style="background:#777777"></i><div><b>#777777</b> text-footer<br>text · footer</div></div>
+    <div class="swatch"><i style="background:#ffffff;border-bottom:1px solid #eee"></i><div><b>#ffffff</b> surface<br>background · 14× · cards, header</div></div>
+    <div class="swatch"><i style="background:#f8f8f8"></i><div><b>#f8f8f8</b> surface-muted<br>background · tabs section</div></div>
+    <div class="swatch"><i style="background:#f3e5f5"></i><div><b>#f3e5f5</b> surface-hover<br>background · nav hover, ground</div></div>
+    <div class="swatch"><i style="background:#dddddd"></i><div><b>#dddddd</b> border<br>tab bar</div></div>
+    <div class="swatch"><i style="background:#e0e0e0"></i><div><b>#e0e0e0</b> border-footer<br>footer top</div></div>
+    <div class="swatch"><i style="background:linear-gradient(135deg,#e0f7fa 0%,#f3e5f5 50%,#fff8e1 100%)"></i><div><b>ground</b> gradient<br>#e0f7fa → #f3e5f5 → #fff8e1</div></div>
+  </div>
+  <p><small>Source: <span class="mono">_brand-extraction.json § palette</span>, <span class="mono">_computed-styles.json § aggregate.colors</span></small></p>
+</section>
+
+<section id="type">
+  <h2>Typography <span class="badge warn">No modular scale</span></h2>
+  <div class="spec" style="font-family:'Playfair Display',Georgia,serif;font-size:3rem;font-weight:700;color:#6a1b9a;letter-spacing:-.5px;text-shadow:2px 2px 4px rgba(106,27,154,.15);line-height:1.6">Super page<small>h1 · 'Playfair Display', Georgia, serif · 48px / 700 / lh 1.6 / −0.5px · 28.8px at ≤768px</small></div>
+  <div class="spec" style="font-family:'Playfair Display',Georgia,serif;font-size:2rem;font-weight:600;color:#00897b;line-height:1.6">Here is a subheading<small>h2 · 32px / 600 · teal with 3px cyan underline · 22.4px at ≤768px</small></div>
+  <div class="spec" style="font-size:1.15rem;font-weight:500;color:#5e35b1;line-height:1.6">Tralalala ladida lalala ladida lalala ladida lalala ladida lalala ladida<small>p (lede) · 'Poppins', 'Segoe UI', system-ui, sans-serif · 18.4px / 500 · centred, max 800px</small></div>
+  <div class="spec" style="font-size:1.05rem;color:#444;line-height:1.8">A wild pangolin appears, juggling tiny umbrellas and humming a tune! Nearby, a mischievous squirrel rides a unicycle while an owl recites a poem about cheese.<small>content block · 16.8px / 400 / lh 1.8</small></div>
+  <div class="spec" style="font-size:1rem;font-weight:700">Alex Johnson<small>h4 (team card name) · 16px / 700</small></div>
+  <p>Observed sizes: 48 → 32 → 18.4 → 17.6 → 16.8 → 16 → 15.2 px. <b>No web font is served</b> — both named families fall back to system faces. Source: <span class="mono">_brand-extraction.json § type</span>.</p>
+</section>
+
+<section id="voice">
+  <h2>Voice <span class="badge">placeholder / playful</span></h2>
+  <div class="stats">
+    <div class="stat"><b>Hero</b>Super page</div>
+    <div class="stat"><b>Tagline</b>Tralalala ladida lalala ladida …</div>
+    <div class="stat"><b>First paragraph</b>A wild pangolin appears, juggling tiny umbrellas and humming a tune!</div>
+  </div>
+  <h3>CTA frequency</h3>
+  <p><span class="pill">Home ×2</span><span class="pill">Page 1 ×2</span><span class="pill">Team Alpha ×2</span><span class="pill">Team Beta ×2</span><span class="pill">Team Gamma ×2</span></p>
+  <h3>Repeated headings</h3>
+  <p>Super page (2 pages) · Alex Johnson (2) · Maria Lopez (2)</p>
+  <div class="stats">
+    <div class="stat"><b>0 %</b>headings uppercase</div>
+    <div class="stat"><b>4</b>distinct headings</div>
+    <div class="stat"><b>5</b>distinct CTA labels</div>
+  </div>
+</section>
+
+<section id="tensions">
+  <h2>Tensions</h2>
+  <div class="tensions">
+    <div class="tension"><h3>T-scale · Type scale is ad-hoc</h3>48 → 32 → 18.4 → 17.6 → 16.8 → 16 → 15.2 px, no consistent ratio. Replica keeps it as is (no direction step).</div>
+    <div class="tension"><h3>T-logo-variants · No logo captured</h3>The locator chain found no logo at all (source: none). Replica ships without one, as the source does.</div>
+    <div class="tension"><h3>T-no-tokens · No design tokens</h3>No CSS custom properties on either page. The migration target introduces a token layer in <span class="mono">styles/styles.css</span>; values stay identical.</div>
+    <div class="tension"><h3>T-color-imbalance · Single-context colours</h3>#00897b (h2 text only), #ec407a (border only), #26c6da (border only), #5e35b1 (text only). Kept as captured.</div>
+    <div class="tension"><h3>Content cap differs per page</h3>Home's widest content box is 1200 px (tables, content block); Page 1's is the 800 px lede. Registered in the inconsistency register as intent (Page 1 simply has no 1200 px module).</div>
+    <div class="tension"><h3>Named fonts not served</h3>Poppins and Playfair Display are named but never loaded; rendered faces are system fallbacks and vary by viewer OS.</div>
+  </div>
+</section>
+
+<section id="motifs">
+  <h2>Motifs</h2>
+  <div class="grid motifs">
+    <div class="m" style="border-radius:12px;box-shadow:0 4px 20px rgba(106,27,154,.12)">12px · 10× · cards, header, block</div>
+    <div class="m" style="border-radius:8px;box-shadow:0 4px 20px rgba(106,27,154,.12)">8px · 6× · nav links, media</div>
+    <div class="m" style="border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.07)">10px · 4× · team cards</div>
+    <div class="m" style="border-radius:50%;width:120px;height:120px;margin:auto;background:#f3e5f5;display:flex;align-items:center;justify-content:center">50% avatar</div>
+    <div class="m" style="border-radius:12px;box-shadow:0 4px 20px rgba(233,30,99,.1);border-left:4px solid #ec407a;background:linear-gradient(135deg,#fff 0%,#fce4ec 100%)">content block shadow + gradient</div>
+    <div class="m" style="border-radius:12px;box-shadow:0 8px 30px rgba(0,150,136,.2);border:2px solid #26c6da">card hover state</div>
+  </div>
+</section>
+
+<section id="components">
+  <h2>Components</h2>
+  <table>
+    <tr><th>Component</th><th>Pages</th><th>Pattern</th></tr>
+    <tr><td>Floating white nav bar</td><td>2</td><td>floating-white-nav-bar · 2 links, 8px pill hover</td></tr>
+    <tr><td>Media row (table cells)</td><td>1 (×2)</td><td>card-in-table-cell · 16/9 media, hover lift</td></tr>
+    <tr><td>Content block</td><td>1</td><td>left-bordered-content-block</td></tr>
+    <tr><td>Team tabs</td><td>2</td><td>pill-tab-bar + team-card-with-round-avatar · 3 tabs × 2 cards</td></tr>
+    <tr><td>Footer</td><td>2</td><td>centred copyright, 2px top border</td></tr>
+  </table>
+</section>
+
+<section id="system">
+  <h2>System components</h2>
+  <table>
+    <tr><th>Name</th><th>Kind</th><th>Occurrences</th><th>Sequence / labels</th></tr>
+    <tr><td>site-header</td><td>header</td><td>2 / 2</td><td>Home · Page 1</td></tr>
+    <tr><td>page-intro</td><td>other</td><td>2 / 2</td><td>h1 "Super page" + lede</td></tr>
+    <tr><td>team-tabs</td><td>other</td><td>2 / 2</td><td>Team Alpha · Team Beta · Team Gamma; 6 members</td></tr>
+    <tr><td>site-footer</td><td>footer</td><td>2 / 2</td><td>© 2026 Super Page. All rights reserved.</td></tr>
+  </table>
+</section>
+
+<section id="logo">
+  <h2>Logo &amp; favicons</h2>
+  <dl><dt>Source</dt><dd>none — no inline SVG, logo-ish img, apple-touch-icon, og:image or favicon</dd><dt>File</dt><dd>—</dd><dt>Variants captured</dt><dd>0</dd><dt>Variants not captured</dt><dd>all (the site has none)</dd></dl>
+</section>
+
+<section id="spacing">
+  <h2>Spacing &amp; shape</h2>
+  <p>Base unit 16 px (1 rem). Observed scale:</p>
+  <div class="bars"><span data-v="8" style="height:8px"></span><span data-v="16" style="height:16px"></span><span data-v="24" style="height:24px"></span><span data-v="32" style="height:32px"></span><span data-v="40" style="height:40px"></span></div>
+  <p style="margin-top:1.5rem">Radii revisited: <span class="pill">8px</span><span class="pill">10px</span><span class="pill">12px</span><span class="pill">50%</span></p>
+</section>
+</main>
+<footer class="review">Read: _brand-extraction.json, _computed-styles.json, _cap-probe.json, _crawl-log.json, pages/*.json. Flow: replica — the design is kept; next is the mechanical preserve-direction step. Badges: <span class="badge">info</span> <span class="badge warn">attention</span></footer>
+</body>
+</html>
