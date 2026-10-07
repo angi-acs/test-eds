@@ -1,0 +1,72 @@
+{
+  "slug": "page1",
+  "type": "static",
+  "renderBranch": "A",
+  "template": null,
+  "modules": [
+    "tabs"
+  ],
+  "slotsFilled": [
+    "h1",
+    "p",
+    "tabs-section"
+  ],
+  "canonShas": {
+    "header": null,
+    "footer": "5ccabaa22450",
+    "css": "c5dbb3810ca9"
+  },
+  "deviations": [],
+  "migrationDecisions": [],
+  "metadata": {
+    "title": "Good Morning!",
+    "description": null,
+    "canonical": null,
+    "lang": "en"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Good Morning!",
+    "url": "https://static-website.david-bosschaert.workers.dev/page1"
+  },
+  "migratedAt": "2026-10-02T10:10:31Z",
+  "designMdSha": "d967d906fbc0",
+  "designJsonSha": "c73fc878b0f4",
+  "sourceCurrentSha": "bd0531d36675",
+  "sourceProposedSha": "3510c3af83d6",
+  "fidelityTier": "archetype",
+  "archetypeSource": null,
+  "archetypeSha": null,
+  "variants": [],
+  "gatesPassed": [
+    "content-fidelity"
+  ],
+  "gateEvidence": {
+    "content-fidelity": "prototype carries the captured strings verbatim; archetype rounds content-diff findings none at 1440 and 360",
+    "pixel-gate-1440": "FAIL: content MISSING 2 / HIDDEN 0 — 0.00%, height delta 0px, clipped 0, content MISSING 2 / HIDDEN 0 (stardust/replica/gates/all-1440/summary.md) [published regime]",
+    "pixel-gate-360": "FAIL: content MISSING 2 / HIDDEN 0 — 0.06%, height delta 0px, clipped 0, content MISSING 2 / HIDDEN 0 (stardust/replica/gates/all-360/summary.md) [published regime]",
+    "delivery-lint": "FAIL: 0 P0 · 1 P1 · 1 P2 (delivery-lint --path /page1)"
+  },
+  "contentDeviations": [
+    {
+      "kind": "dynamic-dependency",
+      "source": "inline showTabSection(idx) onclick handlers on 3 tab buttons",
+      "target": "tabs block JS toggles .active by class (client-only, row 2)",
+      "reason": "inline script is not deliverable; behaviour reproduced in block JS, motion parity 5/5"
+    },
+    {
+      "kind": "dynamic-dependency",
+      "source": "hot-linked images from randomuser.me",
+      "target": "same external URLs carried verbatim (static-snapshot, row 3)",
+      "reason": "replica capture-state policy"
+    }
+  ],
+  "assetsBundled": 2,
+  "missingAssets": [],
+  "brokenInternalLinks": [],
+  "outputPath": "page1/index.html",
+  "outputPathDefault": "trailing-slash",
+  "sidecar": "page1/_meta.json",
+  "driverVersion": "1"
+}

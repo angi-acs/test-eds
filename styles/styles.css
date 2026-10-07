@@ -1,0 +1,218 @@
+/*
+ * Replica canon — values lifted verbatim from the source site's styles.css
+ * (static-website.david-bosschaert.workers.dev) via stardust/prototypes/canon.css
+ * and the site-wide h2 rule from stardust/prototypes/landing.css.
+ * Boilerplate mechanics kept: body appear gate, chrome visibility-until-loaded,
+ * transparent section wrappers (margins collapse like the flat source body).
+ */
+
+:root {
+  --font-body: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Playfair Display', georgia, serif;
+  --color-text: #333;
+  --color-primary: #6a1b9a; /* headings, nav links */
+  --color-primary-dark: #4a148c; /* nav hover */
+  --color-primary-tint: #f3e5f5; /* nav hover bg */
+  --color-lede: #5e35b1; /* paragraphs */
+  --color-accent: #00897b; /* h2 */
+  --color-rule: #26c6da; /* h2 underline, card hover border */
+  --color-muted: #777; /* footer */
+  --color-divider: #e0e0e0; /* footer rule */
+  --color-tab-bg: #f8f8f8;
+  --color-tab-rule: #ddd;
+  --color-tab-text: #666;
+  --color-tab-active: #2196f3;
+  --shadow-card: 0 4px 20px rgb(106 27 154 / 12%);
+  --shadow-team: 0 2px 8px rgb(0 0 0 / 7%);
+  --radius-card: 12px;
+  --radius-inner: 8px;
+  --radius-team: 10px;
+  --container-max: 1200px;
+  --lede-max: 800px;
+  --page-pad: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: none;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: linear-gradient(135deg, #e0f7fa 0%, #f3e5f5 50%, #fff8e1 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--page-pad);
+}
+
+body.appear {
+  display: block;
+}
+
+/* chrome is hidden until its block has loaded; the header sits in normal flow */
+header .header,
+footer .footer {
+  visibility: hidden;
+}
+
+header .header[data-block-status="loaded"],
+footer .footer[data-block-status="loaded"] {
+  visibility: visible;
+}
+
+/* Section transparency: the source body is flat (h1, p, table, h2, div …) and the
+   rhythm comes from element margins collapsing between siblings. Every EDS wrapper
+   (div.section, div.default-content-wrapper, div.<block>-wrapper) must be invisible
+   to that collapsing: no margin, padding, border, overflow or display change here. */
+main .section,
+main .section > div {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+main .section:empty {
+  display: none;
+}
+
+/* Page title */
+h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+  text-shadow: 2px 2px 4px rgb(106 27 154 / 15%);
+}
+
+/* Subheading — site-wide in the source */
+h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--color-rule);
+  display: inline-block;
+}
+
+/* Paragraphs — the source styles every <p> this way, team-card copy included.
+   Blocks neutralise it inside themselves with descendant selectors. */
+p {
+  font-size: 1.15rem;
+  color: var(--color-lede);
+  text-align: center;
+  max-width: var(--lede-max);
+  margin: 0 auto 2rem;
+  font-weight: 500;
+}
+
+/* Team tabs (shared canon; the tabs block relies on these) */
+.tabs-section {
+  margin: 2em 0;
+  padding: 1em;
+  border-radius: var(--radius-card);
+  background: var(--color-tab-bg);
+}
+
+.tab-buttons {
+  display: flex;
+  border-bottom: 2px solid var(--color-tab-rule);
+  margin-bottom: 1em;
+  overflow-x: auto; /* R-02: the live strip overflows the 360 viewport by 41 px; the strip scrolls instead */
+}
+
+.tab-buttons button {
+  /* font-family intentionally unset: the source leaves the UA button face in place */
+  background: none;
+  border: none;
+  padding: 1em 2em;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--color-tab-text);
+  transition: color 0.2s;
+  outline: none;
+}
+
+.tab-buttons button.active {
+  color: var(--color-tab-active);
+  border-bottom: 3px solid var(--color-tab-active);
+  background: #fff;
+}
+
+.tab-content {
+  display: none;
+  animation: fade-in 0.4s;
+}
+
+.tab-content.active {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.team-card {
+  background: #fff;
+  border-radius: var(--radius-team);
+  box-shadow: var(--shadow-team);
+  width: 48%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1em;
+}
+
+.team-card h4 {
+  margin: 0.2em 0;
+}
+
+@media (width <= 900px) {
+  .tab-content.active {
+    flex-direction: column;
+    gap: 1.2em;
+  }
+
+  .team-card {
+    width: 100%;
+  }
+}
+
+@media (width <= 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}

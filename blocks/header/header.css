@@ -1,0 +1,33 @@
+/* Site header — lifted verbatim from the source .site-header rules.
+   The header host sits outside <main> in normal flow: nothing fixed or sticky,
+   no reserved nav height; the box's own 2rem bottom margin sets the gap to the h1. */
+header {
+  height: auto;
+}
+
+header .site-header {
+  display: flex;
+  gap: 1.5rem;
+  max-width: var(--container-max);
+  margin: 0 auto 2rem;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+header .site-header a {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-inner);
+  transition: background 0.2s, color 0.2s;
+}
+
+header .site-header a:hover {
+  background: var(--color-primary-tint);
+  color: var(--color-primary-dark);
+}

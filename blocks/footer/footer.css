@@ -1,0 +1,21 @@
+/* Site footer — lifted verbatim from the source .site-footer rule.
+   The source text is a bare text node, so the authored <p> inherits the box's
+   type instead of the global p rule (descendant selectors only — EW2). */
+footer .site-footer {
+  max-width: var(--container-max);
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  border-top: 2px solid var(--color-divider);
+}
+
+footer .site-footer p {
+  margin: 0;
+  max-width: none;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  text-align: center;
+}
