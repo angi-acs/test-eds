@@ -1,0 +1,72 @@
+/* media-grid — lifted verbatim from the source `.media-grid` table rules (landing.css):
+   width 100% capped at the container, 1.5rem auto margin, cards separated by a 1.5rem
+   border-spacing. The block is a grid of rows and each row a grid of equal columns; the
+   1.5rem padding + gaps reproduce the table's border-spacing exactly. Row/cell wrappers
+   carry the layout classes; authored media is reached by descendant selectors (EW2). */
+.media-grid {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+}
+
+.media-grid .media-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.media-grid .media-cell {
+  background: #fff;
+  border-radius: var(--radius-card);
+  padding: 1rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.media-grid .media-cell:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgb(0 150 136 / 20%);
+  border-color: var(--color-rule);
+}
+
+.media-grid picture {
+  display: block;
+}
+
+.media-grid img,
+.media-grid iframe {
+  display: block;
+  border-radius: var(--radius-inner);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+/* a picture the pipeline leaves inside a <p>: the global p rule must not reach the card */
+.media-grid p {
+  margin: 0;
+  max-width: none;
+}
+
+@media (width <= 768px) {
+  .media-grid {
+    gap: 0;
+    padding: 0;
+  }
+
+  .media-grid .media-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .media-grid .media-cell {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}

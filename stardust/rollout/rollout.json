@@ -1,0 +1,35 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:rollout/inventory",
+    "writtenAt": "2026-10-02T10:11:38.354Z",
+    "stardustVersion": "0.0.0"
+  },
+  "target": "aem-eds",
+  "site": {
+    "sourceUrl": "https://static-website.david-bosschaert.workers.dev/",
+    "da": {
+      "org": "aemcoder",
+      "site": "0f28c839",
+      "ref": "main"
+    },
+    "liveHost": "main--0f28c839--aemcoder.aem.live"
+  },
+  "lastRun": {
+    "at": "2026-10-02T11:21:01.841Z",
+    "pages": {
+      "total": 2,
+      "verified": 2,
+      "deployed": 0,
+      "pending": 0,
+      "contentPending": 0,
+      "stale": 0,
+      "failed": 0
+    },
+    "blocks": {
+      "total": 3,
+      "converted": 3,
+      "pending": 0
+    },
+    "verifyFailures": 0
+  }
+}
