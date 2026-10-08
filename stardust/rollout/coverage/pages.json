@@ -1,0 +1,100 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:rollout/inventory",
+    "writtenAt": "2026-10-02T10:11:38.354Z",
+    "readArtifacts": [
+      "stardust/migrated",
+      "stardust/state.json"
+    ],
+    "stardustVersion": "0.0.0"
+  },
+  "generatedAt": "2026-10-02T11:21:01.841Z",
+  "pages": [
+    {
+      "slug": "index",
+      "path": "/",
+      "title": "Good Morning!",
+      "templateId": "index",
+      "source": {
+        "migratedHtml": "stardust/migrated/index.html",
+        "metaJson": "stardust/migrated/_meta.json",
+        "sourceHash": "sha256:22bd5ec7cbdf537936c4b7645785603786f1f5795258f4f89ea039907a5efd49"
+      },
+      "blocks": [
+        "media-grid",
+        "highlight",
+        "tabs"
+      ],
+      "delivery": {
+        "status": "verified",
+        "deployedUrl": "https://main--0f28c839--aemcoder.aem.page/",
+        "deployedAt": "2026-10-02T10:40:13.024Z",
+        "verifiedAt": "2026-10-02T11:21:01.841Z",
+        "error": null,
+        "gate": {
+          "pass": true,
+          "pct": 0.2,
+          "heightDelta": 0,
+          "clipped": 0,
+          "content": {
+            "missing": 2,
+            "hidden": 0,
+            "controlState": 0,
+            "missingButtons": 3,
+            "hiddenButtons": 0,
+            "findings": 5,
+            "variable": []
+          },
+          "reasons": [
+            "content MISSING 2 / HIDDEN 0"
+          ],
+          "override": "content criterion overridden: the 2 MISSING links are the nav links, chrome on the served side (header landmark); --chrome probe 0 missing / 0 hidden; header crop 0.00%",
+          "table": "stardust/replica/gates/all-360/summary.json",
+          "at": "2026-10-02T11:15:46.479Z"
+        }
+      }
+    },
+    {
+      "slug": "page1",
+      "path": "/page1",
+      "title": "Good Morning!",
+      "templateId": "page1",
+      "source": {
+        "migratedHtml": "stardust/migrated/page1/index.html",
+        "metaJson": "stardust/migrated/page1/_meta.json",
+        "sourceHash": "sha256:1c06d0d52cee981147559a267be2d476d500dc51185095772b5415c9414f7ed1"
+      },
+      "blocks": [
+        "tabs"
+      ],
+      "delivery": {
+        "status": "verified",
+        "deployedUrl": "https://main--0f28c839--aemcoder.aem.page/page1",
+        "deployedAt": "2026-10-02T11:11:28.814Z",
+        "verifiedAt": "2026-10-02T11:21:01.841Z",
+        "error": null,
+        "gate": {
+          "pass": true,
+          "pct": 0.06,
+          "heightDelta": 0,
+          "clipped": 0,
+          "content": {
+            "missing": 2,
+            "hidden": 0,
+            "controlState": 0,
+            "missingButtons": 3,
+            "hiddenButtons": 0,
+            "findings": 5,
+            "variable": []
+          },
+          "reasons": [
+            "content MISSING 2 / HIDDEN 0"
+          ],
+          "override": "content criterion overridden: the 2 MISSING links are the nav links, chrome on the served side (header landmark); --chrome probe 0 missing / 0 hidden; header crop 0.00%",
+          "table": "stardust/replica/gates/all-360/summary.json",
+          "at": "2026-10-02T11:15:46.479Z"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:extract",
+    "writtenAt": "2026-10-02T09:10:00Z",
+    "readArtifacts": [
+      "https://static-website.david-bosschaert.workers.dev/",
+      "https://static-website.david-bosschaert.workers.dev/page1",
+      "https://static-website.david-bosschaert.workers.dev/styles.css",
+      "stardust/current/pages/index.json",
+      "stardust/current/pages/page1.json",
+      "stardust/current/_computed-styles.json",
+      "stardust/current/_cap-probe.json"
+    ],
+    "synthesizedInputs": [],
+    "stardustVersion": "0.27.0",
+    "notes": [
+      "Source stylesheet names 'Poppins' and 'Playfair Display' but loads no web font (no @font-face, no <link> to a font host); the browser renders the system fallbacks of each stack. No font files were intercepted, so type.files is empty.",
+      "No logo element exists on either page (no inline SVG, no logo-ish <img>, no apple-touch-icon, no og:image, no favicon). logo.source = none.",
+      "Home-only and cross-page motif modes agree (12px radius, the 0 4px 20px purple shadow)."
+    ]
+  },
+  "site": {
+    "name": "Super Page",
+    "tagline": "Tralalala ladida lalala ladida lalala ladida lalala ladida lalala ladida",
+    "originUrl": "https://static-website.david-bosschaert.workers.dev"
+  },
+  "origins": [
+    { "url": "https://static-website.david-bosschaert.workers.dev", "role": "primary", "pages": ["index", "page1"] }
+  ],
+  "logo": { "source": "none", "path": null, "selector": null, "variants": [] },
+  "favicon": { "path": null, "note": "no link[rel~=icon] and /favicon.ico unreachable" },
+  "palette": [
+    { "value": "#6a1b9a", "role": "primary", "usedAs": ["text", "shadow-tint"], "occurrences": 8, "sources": ["h1", ".site-header a", "table td box-shadow"] },
+    { "value": "#4a148c", "role": "primary-deep", "usedAs": ["text"], "occurrences": 1, "sources": [".site-header a:hover"] },
+    { "value": "#5e35b1", "role": "text-lede", "usedAs": ["text"], "occurrences": 4, "sources": ["p"] },
+    { "value": "#00897b", "role": "secondary", "usedAs": ["text"], "occurrences": 1, "sources": ["h2"] },
+    { "value": "#26c6da", "role": "secondary-accent", "usedAs": ["border"], "occurrences": 2, "sources": ["h2 border-bottom", "table td:hover border-color"] },
+    { "value": "#ec407a", "role": "tertiary", "usedAs": ["border"], "occurrences": 1, "sources": ["div content block border-left"] },
+    { "value": "#2196f3", "role": "tab-active", "usedAs": ["text", "border"], "occurrences": 2, "sources": [".tab-buttons button.active"] },
+    { "value": "#333333", "role": "text-primary", "usedAs": ["text"], "occurrences": 2, "sources": ["body"] },
+    { "value": "#444444", "role": "text-body-block", "usedAs": ["text"], "occurrences": 1, "sources": ["div content block"] },
+    { "value": "#666666", "role": "text-tab", "usedAs": ["text"], "occurrences": 4, "sources": [".tab-buttons button"] },
+    { "value": "#777777", "role": "text-footer", "usedAs": ["text"], "occurrences": 2, "sources": [".site-footer"] },
+    { "value": "#ffffff", "role": "surface", "usedAs": ["background"], "occurrences": 14, "sources": [".site-header", "table td", ".team-card", ".tab-buttons button.active"] },
+    { "value": "#f8f8f8", "role": "surface-muted", "usedAs": ["background"], "occurrences": 2, "sources": [".tabs-section"] },
+    { "value": "#f3e5f5", "role": "surface-hover", "usedAs": ["background"], "occurrences": 1, "sources": [".site-header a:hover"] },
+    { "value": "#dddddd", "role": "border", "usedAs": ["border"], "occurrences": 2, "sources": [".tab-buttons border-bottom"] },
+    { "value": "#e0e0e0", "role": "border-footer", "usedAs": ["border"], "occurrences": 2, "sources": [".site-footer border-top"] }
+  ],
+  "type": {
+    "headingFamily": "'Playfair Display', Georgia, serif",
+    "bodyFamily": "'Poppins', 'Segoe UI', system-ui, sans-serif",
+    "buttonFamily": "system default (buttons inherit no family; computed Arial)",
+    "renderedNote": "No web font is served; the rendered faces are the system fallbacks (serif for headings, sans-serif for body) on whatever machine renders the page.",
+    "files": [],
+    "levels": {
+      "h1": { "fontSize": "48px (3rem)", "fontWeight": 700, "lineHeight": 1.6, "letterSpacing": "-0.5px", "color": "#6a1b9a", "align": "center", "textShadow": "2px 2px 4px rgba(106,27,154,0.15)", "mobile": "28.8px (1.8rem) at ≤768px" },
+      "h2": { "fontSize": "32px (2rem)", "fontWeight": 600, "color": "#00897b", "borderBottom": "3px solid #26c6da", "display": "inline-block", "mobile": "22.4px (1.4rem) at ≤768px" },
+      "h4": { "fontSize": "16px (1em)", "fontWeight": 700, "family": "body stack" },
+      "p": { "fontSize": "18.4px (1.15rem)", "fontWeight": 500, "color": "#5e35b1", "align": "center", "maxWidth": "800px" },
+      "button": { "fontSize": "17.6px (1.1em)", "fontWeight": 700, "color": "#666" },
+      "footer": { "fontSize": "15.2px (0.95rem)", "color": "#777" },
+      "nav": { "fontSize": "16.8px (1.05rem)", "fontWeight": 600, "color": "#6a1b9a" }
+    },
+    "sizes": [48, 32, 28.8, 22.4, 18.4, 17.6, 16.8, 16, 15.2],
+    "scaleAudit": { "kind": "ad-hoc", "note": "48 → 32 → 18.4 → 16.8 → 16 → 15.2 has no consistent ratio" }
+  },
+  "spacing": {
+    "baseUnit": "16px (1rem)",
+    "scale": ["0.5rem", "1rem", "1.5rem", "2rem", "2.5rem"],
+    "bodyPadding": "2rem (1rem at ≤768px)",
+    "sectionMargin": "2rem auto",
+    "tableSpacing": "border-spacing 1.5rem (0 at ≤768px)"
+  },
+  "motifs": {
+    "borderRadius": { "signature": "12px", "occurrences": { "12px": 10, "8px": 6, "10px": 4, "50%": 6 } },
+    "shadows": [
+      "0 4px 20px rgba(106, 27, 154, 0.12)",
+      "0 2px 8px rgba(0, 0, 0, 0.07)",
+      "0 4px 20px rgba(233, 30, 99, 0.1)"
+    ],
+    "gradients": [
+      { "value": "linear-gradient(135deg, #e0f7fa 0%, #f3e5f5 50%, #fff8e1 100%)", "where": "body (page ground)" },
+      { "value": "linear-gradient(135deg, #ffffff 0%, #fce4ec 100%)", "where": "content block div" }
+    ],
+    "patterns": ["card-in-table-cell", "pill-tab-bar", "team-card-with-round-avatar", "left-bordered-content-block", "floating-white-nav-bar"]
+  },
+  "componentStyle": {
+    "nav-link": { "padding": "0.4rem 1rem", "radius": "8px", "weight": 600, "hover": { "background": "#f3e5f5", "color": "#4a148c" }, "transition": "background 0.2s, color 0.2s" },
+    "media-cell": { "background": "#fff", "radius": "12px", "padding": "1rem", "shadow": "0 4px 20px rgba(106,27,154,0.12)", "border": "2px solid transparent", "hover": { "transform": "translateY(-4px)", "shadow": "0 8px 30px rgba(0,150,136,0.2)", "borderColor": "#26c6da" }, "mediaRadius": "8px", "aspectRatio": "16/9" },
+    "content-block": { "background": "linear-gradient(135deg, #ffffff 0%, #fce4ec 100%)", "padding": "2rem", "radius": "12px", "borderLeft": "4px solid #ec407a", "fontSize": "1.05rem", "lineHeight": 1.8, "color": "#444" },
+    "tabs": { "sectionBackground": "#f8f8f8", "sectionPadding": "1em", "sectionRadius": "12px", "barBorderBottom": "2px solid #ddd", "button": { "padding": "1em 2em", "fontSize": "1.1em", "weight": "bold", "color": "#666" }, "activeButton": { "color": "#2196F3", "borderBottom": "3px solid #2196F3", "background": "#fff" }, "panelGap": "2em (1.2em stacked at ≤900px)" },
+    "team-card": { "background": "#fff", "radius": "10px", "shadow": "0 2px 8px rgba(0,0,0,0.07)", "width": "48% (100% at ≤900px)", "padding": "1em", "avatar": "120px circle, object-fit cover" }
+  },
+  "systemComponents": [
+    { "name": "site-header", "kind": "header", "occurrences": 2, "headingSequence": [], "ctaLabels": ["Home", "Page 1"], "exampleSlug": "index", "exampleSelector": "nav.site-header", "examplePages": ["index", "page1"] },
+    { "name": "site-footer", "kind": "footer", "occurrences": 2, "headingSequence": [], "ctaLabels": [], "text": "© 2026 Super Page. All rights reserved.", "exampleSlug": "index", "exampleSelector": "footer.site-footer", "examplePages": ["index", "page1"] },
+    { "name": "team-tabs", "kind": "other", "occurrences": 2, "headingSequence": ["Alex Johnson", "Maria Lopez", "Brian Kim", "Sophia Patel", "Elijah Brown", "Linda Zhang"], "ctaLabels": ["Team Alpha", "Team Beta", "Team Gamma"], "exampleSlug": "index", "exampleSelector": "div.tabs-section", "examplePages": ["index", "page1"] },
+    { "name": "page-intro", "kind": "other", "occurrences": 2, "headingSequence": ["Super page"], "ctaLabels": [], "exampleSlug": "index", "exampleSelector": "h1#heading + p", "examplePages": ["index", "page1"] }
+  ],
+  "iconFont": null,
+  "voice": {
+    "heroHeadline": "Super page",
+    "heroLede": "Tralalala ladida lalala ladida lalala ladida lalala ladida lalala ladida",
+    "firstParagraph": "A wild pangolin appears, juggling tiny umbrellas and humming a tune! Nearby, a mischievous squirrel rides a unicycle while an owl recites a poem about cheese.",
+    "ctaSamples": ["Home", "Page 1", "Team Alpha"],
+    "heroImage": null,
+    "heroMedium": null,
+    "note": "Placeholder / demo copy throughout; replicated verbatim, never reworded."
+  },
+  "voiceTable": {
+    "ctaFrequency": [["Home", 2], ["Page 1", 2], ["Team Alpha", 2], ["Team Beta", 2], ["Team Gamma", 2]],
+    "headingFrequency": [["Super page", 2], ["Alex Johnson", 2], ["Maria Lopez", 2]],
+    "headingsUppercasePercent": 0,
+    "distinctHeadings": 4,
+    "distinctCtaLabels": 5
+  },
+  "crossPromo": { "detected": false },
+  "register": "brand"
+}
